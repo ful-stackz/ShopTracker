@@ -1,0 +1,22 @@
+﻿@model ShopTracker.Models.Measure
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form class="form bg-light p-2" asp-controller="Measure" asp-action="Edit" method="POST">
+    @Html.AntiForgeryToken()
+    <h3>Update measure</h3>
+    <input type="text" name="id" value="@Model.MeasureID" hidden />
+    <div class="form-row">
+        <div class="col-12 col-md-8 mb-2">
+            <label class="sr-only" for="name" aria-hidden="true">Measure name</label>
+            <input type="text" id="name" name="name" class="form-control" value="@Model.Name" />
+        </div>
+        <div class="col-12 col-md-4">
+            <button type="submit" class="btn btn-warning form-control">Update</button>
+        </div>
+    </div>
+</form>

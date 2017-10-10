@@ -1,0 +1,59 @@
+﻿@model ShopTracker.Models.Purchase
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form class="form p-2 bg-light" asp-controller="Purchase" asp-action="Edit">
+    @Html.AntiForgeryToken()
+    <input type="text" id="userId" name="userId" value="@Model.Group.UserID" hidden aria-hidden="true" />
+    <input type="text" name="purchaseId" value="@Model.PurchaseID" hidden aria-hidden="true" />
+    <h3>Edit purchase</h3>
+
+    <div class="form-row">
+        <div class="col-12 col-md-8 mb-2">
+            <label for="item" class="sr-only" aria-hidden="true">Purchase name</label>
+            <div class="input-group">
+                <input type="text" id="item" name="item" class="form-control" disabled value="@Model.Item.Name" />
+                <span class="input-group-addon" id="category">@Model.Item.Category.Name</span>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+            <label for="group" class="sr-only" aria-hidden="true">Purchase group</label>
+            <select id="group" name="group" class="form-control">
+                <option value="@Model.GroupID">@Model.Group.Name</option>
+            </select>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+            <label for="quantity" class="sr-only" aria-hidden="true">Quantity</label>
+            <div class="input-group">
+                <input type="text" id="quantity" name="quantity" class="form-control" value="@Model.Quantity" placeholder="Quantity (1)" />
+                <span class="input-group-addon" id="measure">@Model.Item.Measure.Name</span>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+            <label for="price" class="sr-only" aria-hidden="true">Price</label>
+            <div class="input-group">
+                <input type="text" id="price" name="price" class="form-control" value="@Model.Price" placeholder="Price (5.00)" />
+                <span class="input-group-addon p-0">
+                    <select id="currency" name="currency" class="custom-select">
+                        <option selected value="@Model.Currency.CurrencyID">@Model.Currency.Name</option>
+                    </select>
+                </span>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+            <label for="date" class="sr-only" aria-hidden="true">Date</label>
+            <input type="datetime" id="date" name="date" class="form-control" placeholder="Date (Day-Month-Year)" value="@Model.Date.ToShortDateString()"/>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary form-control">Edit purchase</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <script src="~/js/PurchaseEdit.js"></script>
+}

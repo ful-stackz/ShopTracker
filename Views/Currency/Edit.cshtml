@@ -1,0 +1,26 @@
+﻿@model ShopTracker.Models.Currency
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form class="form bg-light p-2" asp-controller="Currency" asp-action="Edit" method="POST">
+    @Html.AntiForgeryToken()
+    <h3>Update currency</h3>
+    <input type="text" name="id" value="@Model.CurrencyID" hidden />
+    <div class="form-row">
+        <div class="col-12 col-md-5 mb-2">
+            <label class="sr-only" for="name" aria-hidden="true">Currency name</label>
+            <input type="text" id="name" name="name" class="form-control" value="@Model.Name" />
+        </div>
+        <div class="col-12 col-md-5 mb-2">
+            <label class="sr-only" for="fullName" aria-hidden="true">Currency full name</label>
+            <input type="text" id="fullName" name="fullName" class="form-control" value="@Model.FullName" />
+        </div>
+        <div class="col-12 col-md-2">
+            <button type="submit" class="btn btn-warning form-control">Update</button>
+        </div>
+    </div>
+</form>

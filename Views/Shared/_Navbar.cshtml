@@ -1,0 +1,63 @@
+﻿@using Microsoft.AspNetCore.Mvc
+@using Microsoft.AspNetCore.Http
+@using ShopTracker.Security
+@using static ShopTracker.Security.Authentication
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    HttpContext httpContext = HttpContextAccessor.HttpContext;
+    bool Logged = IsLogged(httpContext);
+    int UserID = 0;
+    string Username = "";
+    string UserRole = "";
+    if (Logged)
+    {
+        UserID = httpContext.Session.GetInt32("UserID") ?? 0;
+        Username = httpContext.Session.GetString("Username");
+        UserRole = httpContext.Session.GetString("UserType");
+        UserRole = UserRole.Split('.')[1];
+    }
+}
+
+<nav class="navbar navbar-light bg-light navbar-collapse navbar-expand-lg justify-content-start">
+    <a asp-controller="Home" asp-action="Index" class="navbar-brand">ShopTracker</a>
+
+    <div class="nav navbar-nav">
+        <a class="nav-item nav-link" asp-controller="Home" asp-action="Index">Home</a>
+        <a class="nav-item nav-link" asp-controller="Home" asp-action="About">About</a>
+
+        @if (Logged)
+        {
+            <a class="nav-item nav-link" asp-controller="Item" asp-action="Browse">Items</a>
+            <a class="nav-item nav-link" asp-controller="Purchase" asp-action="Index">Purchases</a>
+            <a class="nav-item nav-link" asp-controller="Purchase" asp-action="New">New purchase</a>
+            if (UserRole == "Admin")
+            {
+            }
+        }
+    </div>
+
+    <div class="nav navbar-nav ml-auto">
+        @if (Logged)
+        {
+            @if (UserRole == "Admin")
+            {
+                <a class="nav-item nav-link" asp-controller="Account" asp-action="Index">Admin panel</a>
+            }
+            @if (UserRole == "Admin" || UserRole == "Moderator")
+            {
+                <a class="nav-item nav-link" asp-controller="Category" asp-action="Index">Categories</a>
+                <a class="nav-item nav-link" asp-controller="Measure" asp-action="Index">Measures</a>
+                <a class="nav-item nav-link" asp-controller="Currency" asp-action="Index">Currencies</a>
+                <a class="nav-item nav-link" asp-controller="Item" asp-action="Index">Items</a>
+            }
+            <a class="nav-item nav-link" asp-controller="Account" asp-action="Home">@Username</a>
+            <a class="nav-item nav-link" asp-controller="Account" asp-action="Logout">Logout</a>
+        }
+        else
+        {
+            <a class="nav-item nav-link" asp-controller="Account" asp-action="Login">Login</a>
+            <a class="nav-item nav-link" asp-controller="Account" asp-action="New">Sign up</a>
+        }
+    </div>
+</nav>

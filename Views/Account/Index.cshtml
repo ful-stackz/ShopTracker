@@ -1,0 +1,45 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@model List<ShopTracker.Models.User>
+
+@{ 
+    ViewData["Title"] = "Control Panel";
+    string Username = HttpContextAccessor.HttpContext.Session.GetString("Username");
+}
+
+<div class="jumbotron">
+    <h1 class="display-3">Admin Panel</h1>
+    <p class="lead">Manage all the users with ease</p>
+</div>
+
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Date created</th>
+            <th>Groups owned</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserID</td>
+                <td>@user.Username</td>
+                <td>@user.Role.Name</td>
+                <td>@user.DateCreated</td>
+                <td>@user.Groups.Count</td>
+                <td>
+                    <a href="#" >Edit</a>
+                    <a asp-controller="Account" asp-action="Delete" class="text-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

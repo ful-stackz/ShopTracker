@@ -1,0 +1,150 @@
+﻿
+@{
+    ViewData["Title"] = "New";
+}
+
+<h2>New</h2>
+
+
+<style>
+    .dropdown-toggle.btn-default {
+        color: #292b2c;
+        background-color: #fff;
+        border-color: #ccc;
+    }
+
+    .bootstrap-select.show > .dropdown-menu > .dropdown-menu {
+        display: block;
+    }
+
+    .bootstrap-select > .dropdown-menu > .dropdown-menu li.hidden {
+        display: none;
+    }
+
+    .bootstrap-select > .dropdown-menu > .dropdown-menu li a {
+        display: block;
+        width: 100%;
+        padding: 3px 1.5rem;
+        clear: both;
+        font-weight: 400;
+        color: #292b2c;
+        text-align: inherit;
+        white-space: nowrap;
+        background: 0 0;
+        border: 0;
+        text-decoration: none;
+    }
+
+    .bootstrap-select > .dropdown-menu > .dropdown-menu li a:hover {
+        background-color: #f4f4f4;
+    }
+
+    .bootstrap-select > .dropdown-toggle {
+        width: 100%;
+    }
+
+    .dropdown-menu > li.active > a {
+        color: #fff !important;
+        background-color: #337ab7 !important;
+    }
+
+    .bootstrap-select .check-mark {
+        line-height: 14px;
+    }
+
+    .bootstrap-select .check-mark::after {
+        font-family: "FontAwesome";
+        content: "\f00c";
+    }
+
+    .bootstrap-select button {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Make filled out selects be the same size as empty selects */
+    .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+        display: inline !important;
+    }
+
+    .input-group > .input-group-btn > .btn {
+        border-right: none !important;
+    }
+</style>
+    
+
+<form class="form p-2 bg-light" asp-controller="Purchase" asp-action="New">
+    @Html.AntiForgeryToken()
+    <input type="text" id="userId" name="userId" value="@ViewData["UserID"]" hidden aria-hidden="true" />
+    <h3>Add new purchase</h3>
+
+    <div class="form-row">
+
+        <div class="col-12 col-md-6 mb-2">
+            <label for="item" class="sr-only" aria-hidden="true">Purchase name</label>
+            <div class="input-group">
+                <select class="selectpicker form-control" id="item" name="item" data-live-search="true"></select>
+                <span class="input-group-addon" id="category">Category</span>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-3 mb-2">
+            <label for="group" class="sr-only" aria-hidden="true">Purchase group</label>
+            <select id="group" name="group" class="form-control"></select>
+        </div>
+
+        <div class="col-12 col-md-3 mb-2">
+            <label for="provider" class="sr-only" aria-hidden="true">Purchase provider</label>
+            <input id="provider" name="provider" class="form-control" placeholder="Provider (Metro)" />
+        </div>
+
+        <div class="col-12 col-md-4 mb-2">
+            <label for="quantity" class="sr-only" aria-hidden="true">Quantity</label>
+            <div class="input-group">
+                <input type="text" id="quantity" name="quantity" class="form-control" placeholder="Quantity (1)" />
+                <span class="input-group-addon" id="measure">pieces</span>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-2">
+            <label for="price" class="sr-only" aria-hidden="true">Price</label>
+            <div class="input-group">
+                <input type="text" id="price" name="price" class="form-control" placeholder="Price (5.00)" />
+                <span class="input-group-addon p-0">
+                    <select id="currency" name="currency" class="custom-select">
+                    </select>
+                </span>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-2">
+            <label for="date" class="sr-only" aria-hidden="true">Date</label>
+            <input type="datetime" id="date" name="date" class="form-control" placeholder="Date (Day-Month-Year)" />
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary form-control" >Add purchase</button>
+        </div>
+
+    </div>
+</form>
+
+<table class="table d-none" id="itemsTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Measure</th>
+            <th>Add</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="~/js/PurchasesNew.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+}

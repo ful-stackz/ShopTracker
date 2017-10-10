@@ -1,0 +1,66 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Hello, @HttpContextAccessor.HttpContext.Session.GetString("Username")!</h1>
+
+<a asp-controller="Account" asp-action="Home">Account page</a><br />
+<a asp-controller="Account" asp-action="Logout">Log out</a>
+
+<br /><br />
+
+@* New category form section *@
+<form class="form bg-light p-2" asp-controller="Category" asp-action="New" method="POST">
+    @Html.AntiForgeryToken()
+    <h3>Create new category</h3>
+    <div class="form-row">
+        <div class="col-12 col-md-8 mb-2">
+            <label class="sr-only" for="name" aria-hidden="true">Category name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="New category name" />
+        </div>
+        <div class="col-12 col-md-4">
+            <button type="submit" class="btn btn-primary form-control">Create</button>
+        </div>
+    </div>
+</form>
+
+<br />
+
+@* New measure form section *@
+<form class="form bg-light p-2" asp-controller="Measure" asp-action="New" method="POST">
+    @Html.AntiForgeryToken()
+    <h3>Create new measure</h3>
+    <div class="form-row">
+        <div class="col-12 col-md-8 mb-2">
+            <label class="sr-only" for="name" aria-hidden="true">Measure name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="New measure name" />
+        </div>
+        <div class="col-12 col-md-4">
+            <button type="submit" class="btn btn-primary form-control">Create</button>
+        </div>
+    </div>
+</form>
+
+<br />
+
+@* New currency form section *@
+<form class="form bg-light p-2" asp-controller="Currency" asp-action="New" method="POST">
+    @Html.AntiForgeryToken()
+    <h3>Create new currency</h3>
+    <div class="form-row">
+        <div class="col-12 col-md-5 mb-2">
+            <label class="sr-only" for="name" aria-hidden="true">Currency name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Currency (EUR)" />
+        </div>
+        <div class="col-12 col-md-5 mb-2">
+            <label class="sr-only" for="fullName" aria-hidden="true">Currency full name</label>
+            <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Full name (Euro)" />
+        </div>
+        <div class="col-12 col-md-2">
+            <button type="submit" class="btn btn-primary form-control">Create</button>
+        </div>
+    </div>
+</form>

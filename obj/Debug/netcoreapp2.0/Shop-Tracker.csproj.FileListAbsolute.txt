@@ -1,0 +1,11 @@
+E:\Projects\ASP.NET\Shop-Tracker\Shop-Tracker\bin\Debug\netcoreapp2.0\Shop-Tracker.deps.json
+E:\Projects\ASP.NET\Shop-Tracker\Shop-Tracker\bin\Debug\netcoreapp2.0\Shop-Tracker.runtimeconfig.json
+E:\Projects\ASP.NET\Shop-Tracker\Shop-Tracker\bin\Debug\netcoreapp2.0\Shop-Tracker.runtimeconfig.dev.json
+E:\Projects\ASP.NET\Shop-Tracker\Shop-Tracker\bin\Debug\netcoreapp2.0\Shop-Tracker.dll
+E:\Projects\ASP.NET\Shop-Tracker\Shop-Tracker\obj\Debug\netcoreapp2.0\Shop-Tracker.csprojResolveAssemblyReference.cache
+E:\Projects\ASP.NET\Shop-Tracker\Shop-Tracker\obj\Debug\netcoreapp2.0\Shop-Tracker.csproj.CoreCompileInputs.cache
+E:\Projects\ASP.NET\Shop-Tracker\Shop-Tracker\obj\Debug\netcoreapp2.0\Shop-Tracker.AssemblyInfoInputs.cache
+E:\Projects\ASP.NET\Shop-Tracker\Shop-Tracker\obj\Debug\netcoreapp2.0\Shop-Tracker.AssemblyInfo.cs
+E:\Projects\ASP.NET\Shop-Tracker\Shop-Tracker\bin\Debug\netcoreapp2.0\Shop-Tracker.pdb
+E:\Projects\ASP.NET\Shop-Tracker\Shop-Tracker\obj\Debug\netcoreapp2.0\Shop-Tracker.dll
+E:\Projects\ASP.NET\Shop-Tracker\Shop-Tracker\obj\Debug\netcoreapp2.0\Shop-Tracker.pdb

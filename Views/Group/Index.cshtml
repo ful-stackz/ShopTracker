@@ -1,0 +1,12 @@
+﻿@model List<ShopTracker.Models.Group>
+
+@{  
+    ViewData["Title"] = "Groups CP";
+}
+
+<h2>Index</h2>
+
+@foreach (var group in Model)
+{
+    <p>@group.ToString()</p>
+}

@@ -1,0 +1,148 @@
+﻿@model ShopTracker.Models.User
+
+@{
+    ViewData["Title"] = "Account Control";
+
+    decimal CalculateExpenses(ShopTracker.Models.Group _group)
+    {
+        if (_group.Purchases == null) return 0;
+
+        decimal total = 0;
+
+        foreach (var purchase in _group.Purchases)
+        {
+            total += purchase.Price;
+        }
+
+        return total;
+    }
+}
+
+<div class="jumbotron">
+    <h1 class="display-3">Account Control</h1>
+    <p class="lead">Here you can manage your groups, change your password and delete your account.</p>
+</div>
+
+@* Account information section *@
+<div class="card">
+    <div class="card-header">
+        Account information
+    </div>
+    <div class="card-body">
+        <h4>Hello, @Model.Username</h4>
+        <p class="card-text">
+            Account type: @Model.Role.Name
+            <br />
+            You joined on @Model.DateCreated
+            <br />
+            Groups created: @Html.Raw((Model.Groups != null) ? Model.Groups.Count.ToString() : "0")
+            <br />
+            Total purchases: 243
+        </p>
+    </div>
+</div>
+
+<br />
+
+@* Groups section *@
+<div class="card-deck">
+    @foreach (var group in Model.Groups)
+    {
+        <div class="card bg-light border-info mb-3" group-id="@group.GroupID">
+            <div class="card-header">@group.Name</div>
+            <div class="card-body">
+                <h4 class="card-title">Expenses: @CalculateExpenses(group)</h4>
+                <p class="card-text">You have @(group.Purchases == null ? 0 : group.Purchases.Count) purchases in this group. Your preferred currency is <span class="prefcurr">@(group.PreferredCurrency == null ? "-" : group.PreferredCurrency.FullName)</span>.</p>
+            </div>
+            <div class="card-footer">
+                <a role="button" class="text-primary group-edit" group-id="@group.GroupID" style="cursor: pointer;">Edit</a>
+                <a role="button" class="text-danger group-delete" group-id="@group.GroupID" style="cursor: pointer;">Delete</a>
+            </div>
+        </div>
+    }
+</div>
+
+<hr class="my-0" />
+
+<form class="form bg-light p-2 pt-3" asp-controller="Group" asp-action="New">
+    @Html.AntiForgeryToken()
+
+    <h4 class="mb-2">Create new group</h4>
+
+    <div class="form-row">
+        <div class="col-12 col-md-5">
+            <label class="sr-only" for="groupPassword">Group name</label>
+            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="groupName" name="name" placeholder="My new group's name'" />
+        </div>
+        <div class="col-12 col-md-5">
+            <label class="sr-only" for="groupPassword">Group password</label>
+            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="groupPassword" name="password" placeholder="Optional" />
+        </div>
+        <div class="col-12 col-md-2">
+            <button type="submit" class="btn btn-primary form-control">Create</button>
+        </div>
+        @if (TempData["Errors"] != null)
+        {
+            <div class="col-12 p-2 mb-0">
+                <div class="alert alert-danger mb-0">
+                    @((TempData["ErrorsList"] as Dictionary<string, string>).Where(e => e.Key == "Group").FirstOrDefault().Value)
+                    @((TempData["ErrorsList"] as Dictionary<string, string>).Where(e => e.Key == "GroupName").FirstOrDefault().Value)
+                </div>
+            </div>
+        }
+    </div>
+</form>
+
+<br />
+
+@* Change password section *@
+<form class="form bg-light p-2" asp-controller="Account" asp-action="ChangePassword">
+    @Html.AntiForgeryToken()
+
+    <input type="text" name="id" value="@Model.UserID" hidden />
+
+    <h4>Change password</h4>
+
+    <div class="form-row">
+        <div class="col-12 col-md-4">
+            <label class="sr-only" for="oldPassword">Old password</label>
+            <input type="password" class="form-control mb-2 mr-sm-2 mb-sm-0" id="oldPassword" name="oldPassword" placeholder="Current password" />
+        </div>
+        <div class="col-12 col-md-4">
+            <label class="sr-only" for="newPassword">New password</label>
+            <input type="password" class="form-control mb-2 mr-sm-2 mb-sm-0" id="newPassword" name="newPassword" placeholder="New password" />
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+            <label class="sr-only" for="confirmPassword">Confirm password</label>
+            <input type="password" class="form-control mb-2 mr-sm-2 mb-sm-0" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password" />
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary form-control">Change</button>
+        </div>
+    </div>
+</form>
+
+<br />
+
+@* Delete account section *@
+<form class="form bg-light p-2" asp-controller="Account" asp-action="Delete">
+    @Html.AntiForgeryToken()
+
+    <input type="text" name="id" value="@Model.UserID" hidden />
+
+    <h4 class="text-danger">Delete account</h4>
+
+    <div class="form-row">
+        <div class="col-12 col-md-6">
+            <label class="sr-only" for="username">Username</label>
+            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="username" name="username" placeholder="Confirm with your username" />
+        </div>
+        <div class="col-12 col-md-6">
+            <button type="submit" class="btn btn-danger form-control">Delete forever</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <script src="~/js/UserHome.js"></script>
+}

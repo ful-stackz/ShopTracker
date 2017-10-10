@@ -1,0 +1,55 @@
+﻿@model List<ShopTracker.Models.Category>
+
+@{
+    ViewData["Title"] = "Categories Manager";
+}
+
+<div class="jumbotron">
+    <h1 class="display-4">Categories Manager</h1>
+    <p class="lead">Manage all the categories available</p>
+</div>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Items</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>@category.CategoryID</td>
+                    <td>@category.Name</td>
+                    <td>@category.Items.Count</td>
+                    <td>
+                        <a asp-controller="Category" asp-action="Edit" asp-route-id="@category.CategoryID">Edit</a>
+                        <a asp-controller="Category" asp-action="Delete" asp-route-id="@category.CategoryID" class="text-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <br />
+}
+
+@* New category form section *@
+<form class="form bg-light p-2" asp-controller="Category" asp-action="New" method="POST">
+    @Html.AntiForgeryToken()
+    <h3>Create new category</h3>
+    <div class="form-row">
+        <div class="col-12 col-md-8 mb-2">
+            <label class="sr-only" for="name" aria-hidden="true">Category name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="New category name" />
+        </div>
+        <div class="col-12 col-md-4">
+            <button type="submit" class="btn btn-primary form-control">Create</button>
+        </div>
+    </div>
+</form>

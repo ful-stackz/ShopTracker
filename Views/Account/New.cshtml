@@ -1,0 +1,48 @@
+﻿@model ShopTracker.Models.User
+
+@{ 
+    ViewData["Title"] = "Sign up";
+}
+
+<form asp-controller="Account" asp-action="New" method="POST" class="mt-5">
+    @Html.AntiForgeryToken()
+    <div class="text-center w-100">
+        <h1 class="display-4">Sign up</h1>
+    </div>
+    <div class="form-row">
+        <div class="d-none d-md-block col-md-3"></div>
+        <div class="form-group col-12 col-md-6">
+            <label for="username" class="col-form-label">Username</label>
+            <input id="username" type="text" class="form-control" name="username" placeholder="Be creative" autofocus />
+            <small class="form-text text-muted">Your username must be between 4 and 25 characters long</small>
+            <div class="alert alert-danger d-none mb-0 mt-2">
+                @Html.ValidationMessageFor(u => u.Username, "", new { @class = "text-danger" })
+
+                @if (ViewData["Errors"] != null)
+                {
+                    @((ViewData["ErrorsList"] as Dictionary<string, string>)["Username"])
+                }
+            </div>
+        </div>
+        <div class="d-none d-md-block col-md-3"></div>
+        <div class="d-none d-md-block col-md-3"></div>
+        <div class="form-group col-12 col-md-6">
+            <label for="password" class="col-form-label">Password</label>
+            <input id="password" type="password" class="form-control" name="password" placeholder="Think strong" />
+            <small class="form-text text-muted">Your password must be at least 6 characters long and must include at least one lower case, one upper case letter and one number</small> 
+            <div class="alert alert-danger d-none mb-0 mt-2">
+                @Html.ValidationMessageFor(u => u.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="d-none d-md-block col-md-3"></div>
+        <div class="d-none d-md-block col-md-3"></div>
+        <div class="form-group col-12 col-md-6">
+            <button type="submit" class="btn btn-primary form-control">Sign Up</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts
+{
+    <script src="~/js/ErrorLoading.js"></script>
+}

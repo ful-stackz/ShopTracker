@@ -1,0 +1,55 @@
+﻿@model List<ShopTracker.Models.Measure>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="jumbotron">
+    <h1 class="display-4">Measures Manager</h1>
+    <p class="lead">Manage all the measures available</p>
+</div>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Items</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var measure in Model)
+            {
+                <tr>
+                    <td>@measure.MeasureID</td>
+                    <td>@measure.Name</td>
+                    <td>Measure.Items.Count</td>
+                    <td>
+                        <a asp-controller="Measure" asp-action="Edit" asp-route-id="@measure.MeasureID">Edit</a>
+                        <a asp-controller="Measure" asp-action="Delete" asp-route-id="@measure.MeasureID" class="text-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <br />
+}
+
+    @* New measure form section *@
+    <form class="form bg-light p-2" asp-controller="Measure" asp-action="New" method="POST">
+        @Html.AntiForgeryToken()
+        <h3>Create new measure</h3>
+        <div class="form-row">
+            <div class="col-12 col-md-8 mb-2">
+                <label class="sr-only" for="name" aria-hidden="true">Measure name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="New measure name" />
+            </div>
+            <div class="col-12 col-md-4">
+                <button type="submit" class="btn btn-primary form-control">Create</button>
+            </div>
+        </div>
+    </form>

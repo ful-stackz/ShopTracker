@@ -1,0 +1,33 @@
+﻿@model List<ShopTracker.Models.Item>
+@{
+    ViewData["Title"] = "Browse";
+}
+<div class="jumbotron">
+    <h1 class="display-4">
+        Browser Items
+    </h1>
+    <p class="lead mb-0">
+        Browse all the items available<br />
+        Or <a asp-controller="Item" asp-action="New">create</a> a new one!
+    </p>
+</div>
+<input id="searchBar" type="text" class="w-100 mb-1 form-control" placeholder="Search items" />
+<input id="userId" type="text" value="@ViewData["UserID"]" hidden aria-hidden="true" />
+
+
+<table class="table" id="itemsTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Measure</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section Scripts {
+    <script src="~/js/ItemsBrowse.js"></script>
+}

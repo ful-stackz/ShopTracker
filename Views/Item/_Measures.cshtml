@@ -1,0 +1,27 @@
+﻿@model List<ShopTracker.Models.Measure>
+
+@{
+    // In case this is being rendered in the edit form
+    // try to get current measure
+    TempData.TryGetValue("CurrentMeasure", out object currentMeasure);
+}
+
+<div class="col-12 col-md-4 mb-2">
+    <div class="form-group">
+        <label for="measure" class="sr-only" aria-hidden="true">Measure select</label>
+        <select class="form-control" id="measure" name="measure" placeholder="Measure">
+            @if (currentMeasure != null)
+            {
+                <option value="@((currentMeasure as ShopTracker.Models.Measure).MeasureID)" selected>@((currentMeasure as ShopTracker.Models.Measure).Name)</option>
+            }
+            else
+            {
+                <option value="" disabled selected>Measure</option>
+            }
+            @foreach (var measure in Model)
+            {
+                <option value="@measure.MeasureID">@measure.Name</option>
+            }
+        </select>
+    </div>
+</div>

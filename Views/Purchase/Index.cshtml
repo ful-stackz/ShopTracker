@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="jumbotron">
+    <h1 class="display-4">All my purchases</h1>
+    <p class="lead">Review all your purchases</p>
+</div>
+
+<br />
+
+@* Search for item *@
+<div class="row">
+
+    @* SEARCH *@
+    <div class="col-12 col-md-3 mb-2">
+        <div class="form-group">
+            <label class="form-control-label">Search by name</label>
+            <input type="text" id="itemSearch" class="form-control" placeholder="Search item" />
+        </div>
+
+    </div>
+    
+    @* FILTERS *@
+    <div class="col-12 col-md-3 mb-2">
+        <div class="form-group">
+            <label class="form-control-label">Filter by group</label>
+            <select id="group" name="group" class="custom-select form-control filter"></select>
+        </div>
+
+    </div>
+    <div class="col-12 col-md-3 mb-2">
+        <label class="form-control-label">Filter by category</label>
+        <select id="category" name="category" class="custom-select form-control filter"></select>
+    </div>
+    <div class="col-6 col-md-3 mb-2">
+        <div class="form-group">
+            <label class="form-control-label">Filter by date</label>
+            <select id="timeSpan" name="timeSpan" class="custom-select form-control filter">
+                <option value="0">All-time</option>
+                <option value="1">Today</option>
+                <option value="2">This week</option>
+                <option value="3">This month</option>
+                <option value="4">This year</option>
+            </select>
+        </div>
+    </div>
+
+    @* SORT *@
+    <div class="col-3 col-md-3 mb-2">
+        <div class="form-group">
+            <label class="form-control-label">Order by</label>
+            <select id="orderby" name="orderby" class="custom-select form-control sort">
+                <option value="0" selected>Date</option>
+                <option value="1">Quantity</option>
+                <option value="2">Price</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-3 col-md-3 mb-2">
+        <div class="form-group">
+            <label class="form-control-label">Sort</label>
+            <select id="sortby" name="sortby" class="custom-select form-control sort">
+                <option value="0">Ascending</option>
+                <option value="1" selected>Descending</option>
+            </select>
+        </div>
+    </div>
+
+    @* MODULAR VIEW *@
+    <div class="col-3 col-md-6 mb-2">
+        <div class="form-group">
+            <label class="form-control-label">Show</label><br />
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="nameCb" control="data-name" checked> Name
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="quantityCb" control="data-quantity" checked> Quantity
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="priceCb" control="data-price" checked> Price
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="dateCb" control="data-date" checked> Date
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="providerCb" control="data-provider" checked> Provider
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="actionsCb" control="data-actions" checked> Actions
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.AntiForgeryToken()
+<input type="text" id="userId" value="@ViewData["UserID"]" hidden />
+
+<table class="table d-none" id="itemsTable">
+    <thead>
+        <tr>
+            <th class="data-name">Name</th>
+            <th class="data-quantity">Quantity</th>
+            <th class="data-price">Price</th>
+            <th class="data-date">Date</th>
+            <th class="data-provider">Provider</th>
+            <th class="data-actions">Actions</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section Scripts {
+    <script src="~/js/PurchasesIndex.js"></script>
+}

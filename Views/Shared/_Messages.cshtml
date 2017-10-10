@@ -1,0 +1,20 @@
+﻿@using static ShopTracker.MessageDistribute.MessageDistribute
+@using ShopTracker.MessageDistribute
+@using Newtonsoft.Json
+
+@{
+    var Messages = GetMessages(TempData);
+    if (Messages != null)
+    {
+        foreach (var msg in Messages)
+        {
+            <div class="alert alert-@msg.Type.ToLower() fixed-bottom w-50 text-center mx-auto alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <b>@msg.Title</b><br />
+                @msg.Body
+            </div>
+        }
+    }
+}

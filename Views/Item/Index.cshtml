@@ -1,0 +1,68 @@
+﻿@model List<ShopTracker.Models.Item>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="jumbotron">
+    <h1 class="display-4">Manage Items</h1>
+    <p class="lead">Manage all the items</p>
+</div>
+
+<form class="form bg-light p-2" asp-controller="Item" asp-action="New" method="POST">
+    @Html.AntiForgeryToken()
+
+    <h3>Add new item</h3>
+
+    <div class="form-row">
+        <div class="col-12 col-md-4 mb-2">
+            <label for="name" class="sr-only" aria-hidden="true">Item name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Item name (Coca-Cola)" />
+        </div>
+        <div class="col-12 col-md-8 mb-2">
+            <label for="description" class="sr-only" aria-hidden="true">Item description</label>
+            <input type="text" class="form-control" id="description" name="description" placeholder="Item description (A carbonated drink)" />
+        </div>
+        @Html.Partial("_Categories", ViewData["Categories"])
+        @Html.Partial("_Measures", ViewData["Measures"])
+        <div class="col-12 col-md-4">
+            <button type="submit" class="btn btn-primary form-control align-middle w-100">Add item</button>
+        </div>
+    </div>
+</form>
+
+@if (Model != null && Model.Count > 0)
+{
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Measure</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ItemID</td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Category.Name</td>
+                    <td>@item.Measure.Name</td>
+                    <td>
+                        <a asp-controller="Item" asp-action="Edit" asp-route-id="@item.ItemID">Edit</a>
+                        <a asp-controller="Item" asp-action="Delete" asp-route-id="@item.ItemID" class="text-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <br />
+}

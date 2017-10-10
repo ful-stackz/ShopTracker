@@ -1,0 +1,39 @@
+﻿@model ShopTracker.Models.Item
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form class="form bg-light p-2" asp-controller="Item" asp-action="Edit" method="POST">
+    @Html.AntiForgeryToken()
+    <h3>Add new item</h3>
+    <div class="form-row">
+        <div class="col-12 col-md-4 mb-2">
+            <label for="name" class="sr-only" aria-hidden="true">Item name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Item name (Coca-Cola)" value="@Model.Name" />
+            <div class="alert alert-danger d-none mb-0 mt-2">
+                @Html.ValidationMessageFor(u => u.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-12 col-md-8 mb-2">
+            <label for="description" class="sr-only" aria-hidden="true">Item description</label>
+            <input type="text" class="form-control" id="description" name="description" placeholder="Item description (A carbonated drink)" value="@Model.Description" />
+            <div class="alert alert-danger d-none mb-0 mt-2">
+                @Html.ValidationMessageFor(u => u.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @Html.Partial("_Categories", ViewData["Categories"])
+        @Html.Partial("_Measures", ViewData["Measures"])
+        <div class="alert alert-danger d-none mb-0 mt-2">
+            @Html.ValidationMessageFor(u => u.CategoryID, "", new { @class = "text-danger" })
+        </div>
+        <div class="alert alert-danger d-none mb-0 mt-2">
+            @Html.ValidationMessageFor(u => u.MeasureID, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-12 col-md-4">
+            <button type="submit" class="btn btn-primary form-control">Update item</button>
+        </div>
+    </div>
+</form>

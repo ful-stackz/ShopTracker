@@ -172,8 +172,7 @@ namespace ShopTracker.Controllers
             //
             if (DbContext.Users.Where(u => u.Username == username).FirstOrDefault() != null)
             {
-                ViewData["Errors"] = "HasErrors";
-                ViewData["ErrorsList"] = new Dictionary<string, string>() { { "Username", "This username already exists" } };
+                AddErrorMessage(TempData, "This username already exists!");
                 return View(); // Username exists
             }
 
@@ -184,7 +183,7 @@ namespace ShopTracker.Controllers
             // Make new model for the new user
             // Pass the username and password provided by the user
             //
-            Models.User newUser = new Models.User
+            Models.User newUser = new Models.User()
             {
                 Username = username,
                 Password = password
@@ -222,23 +221,20 @@ namespace ShopTracker.Controllers
 
                 // Set a welcoming/helping message
                 //
-                AddMessage(TempData, new Message()
-                {
-                    Type = "Success",
-                    Title = "Welcome to ShopTracker!",
-                    Body = "You successfully signed up for the best expenses tracker! You can now login and start tracking!"
-                });
-
+                AddOkMessage(TempData, "You successfully signed up for the best expenses tracker! You can now login and start tracking!", "Welcome to ShopTracker!");
+                
                 // Redirect to the login page
                 //
                 return RedirectToAction("Login");
             }
-            catch
+            catch (Exception ex)
             {
                 // Something went wrong
                 // Redirect user to a new sign up form
                 //
-                return View(newUser);
+                AddErrorMessage(TempData, ex.ToString());
+                AddErrorMessage(TempData, "Error while making a new record!");
+                return RedirectToAction("New");
             }
         }
         

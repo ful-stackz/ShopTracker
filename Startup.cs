@@ -53,6 +53,19 @@ namespace Shop_Tracker
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            try
+            {
+                using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+                {
+                    serviceScope.ServiceProvider.GetService<ShopTrackContext>().Database.EnsureCreated();
+                    serviceScope.ServiceProvider.GetService<ShopTrackContext>().Database.Migrate();
+                }
+            }
+            catch
+            {
+
+            }
+
             app.UseStaticFiles();
 
             app.UseSession();

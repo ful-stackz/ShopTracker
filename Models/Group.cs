@@ -31,7 +31,7 @@ namespace ShopTracker.Models
 
         public Group()
         {
-            if (PrefCurrID == null) PrefCurrID = 2;
+            if (PrefCurrID == null) PrefCurrID = 1;
         }
     }
 }

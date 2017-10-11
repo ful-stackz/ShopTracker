@@ -7,92 +7,92 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
-    <_PublishTargetUrl>ftp://FTP-EU.SMARTERASP.NET/shoptracker/shoptracker</_PublishTargetUrl>
+    <_PublishTargetUrl>ftp://FTP-EU.SMARTERASP.NET/shoptracker/</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
-      <publishTime>01/10/2017 19:45:04</publishTime>
+      <publishTime>10/01/2017 19:45:04</publishTime>
     </File>
     <File Include="appsettings.json">
       <publishTime>10/10/2017 16:16:33</publishTime>
     </File>
     <File Include="bower.json">
-      <publishTime>01/10/2017 19:45:04</publishTime>
+      <publishTime>10/01/2017 19:45:04</publishTime>
     </File>
     <File Include="bundleconfig.json">
-      <publishTime>01/10/2017 19:45:04</publishTime>
+      <publishTime>10/01/2017 19:45:04</publishTime>
     </File>
     <File Include="dotnet-aspnet-codegenerator-design.dll">
-      <publishTime>07/09/2017 13:21:22</publishTime>
+      <publishTime>09/07/2017 13:21:22</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
-      <publishTime>07/09/2017 13:21:21</publishTime>
+      <publishTime>09/07/2017 13:21:21</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
-      <publishTime>07/09/2017 13:21:23</publishTime>
+      <publishTime>09/07/2017 13:21:23</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
-      <publishTime>07/09/2017 13:21:22</publishTime>
+      <publishTime>09/07/2017 13:21:22</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Core.dll">
-      <publishTime>07/09/2017 13:21:22</publishTime>
+      <publishTime>09/07/2017 13:21:22</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.dll">
-      <publishTime>07/09/2017 13:21:22</publishTime>
+      <publishTime>09/07/2017 13:21:22</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll">
-      <publishTime>07/09/2017 13:21:22</publishTime>
+      <publishTime>09/07/2017 13:21:22</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll">
-      <publishTime>07/09/2017 13:21:22</publishTime>
+      <publishTime>09/07/2017 13:21:22</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll">
-      <publishTime>07/09/2017 13:21:22</publishTime>
+      <publishTime>09/07/2017 13:21:22</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll">
-      <publishTime>07/09/2017 13:21:22</publishTime>
+      <publishTime>09/07/2017 13:21:22</publishTime>
     </File>
     <File Include="Newtonsoft.Json.dll">
       <publishTime>06/18/2017 13:57:10</publishTime>
     </File>
     <File Include="NuGet.Frameworks.dll">
-      <publishTime>07/09/2017 13:21:21</publishTime>
+      <publishTime>09/07/2017 13:21:21</publishTime>
     </File>
     <File Include="ShopTracker.deps.json">
-      <publishTime>10/11/2017 10:00:47</publishTime>
+      <publishTime>10/11/2017 12:56:15</publishTime>
     </File>
     <File Include="ShopTracker.dll">
-      <publishTime>10/11/2017 10:00:43</publishTime>
+      <publishTime>10/11/2017 12:56:12</publishTime>
     </File>
     <File Include="ShopTracker.pdb">
-      <publishTime>10/11/2017 10:00:43</publishTime>
+      <publishTime>10/11/2017 12:56:12</publishTime>
     </File>
     <File Include="ShopTracker.PrecompiledViews.dll">
-      <publishTime>10/11/2017 10:00:46</publishTime>
+      <publishTime>10/11/2017 12:56:15</publishTime>
     </File>
     <File Include="ShopTracker.PrecompiledViews.pdb">
-      <publishTime>10/11/2017 10:00:46</publishTime>
+      <publishTime>10/11/2017 12:56:15</publishTime>
     </File>
     <File Include="ShopTracker.runtimeconfig.json">
-      <publishTime>10/11/2017 10:00:47</publishTime>
+      <publishTime>10/11/2017 12:56:15</publishTime>
     </File>
     <File Include="System.Composition.AttributedModel.dll">
-      <publishTime>07/09/2017 13:21:21</publishTime>
+      <publishTime>09/07/2017 13:21:21</publishTime>
     </File>
     <File Include="System.Composition.Convention.dll">
-      <publishTime>07/09/2017 13:21:21</publishTime>
+      <publishTime>09/07/2017 13:21:21</publishTime>
     </File>
     <File Include="System.Composition.Hosting.dll">
-      <publishTime>07/09/2017 13:21:21</publishTime>
+      <publishTime>09/07/2017 13:21:21</publishTime>
     </File>
     <File Include="System.Composition.Runtime.dll">
-      <publishTime>07/09/2017 13:21:21</publishTime>
+      <publishTime>09/07/2017 13:21:21</publishTime>
     </File>
     <File Include="System.Composition.TypedParts.dll">
-      <publishTime>07/09/2017 13:21:21</publishTime>
+      <publishTime>09/07/2017 13:21:21</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>10/11/2017 10:00:47</publishTime>
+      <publishTime>10/11/2017 12:56:15</publishTime>
     </File>
     <File Include="wwwroot/css/bootstrap-select-fix.css">
       <publishTime>10/10/2017 23:14:10</publishTime>
@@ -100,17 +100,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="wwwroot/css/bootstrap.css">
       <publishTime>08/10/2017 20:52:10</publishTime>
     </File>
+    <File Include="wwwroot/css/bootstrap.css.map">
+      <publishTime>08/10/2017 20:52:10</publishTime>
+    </File>
     <File Include="wwwroot/css/bootstrap.min.css">
+      <publishTime>08/10/2017 20:52:12</publishTime>
+    </File>
+    <File Include="wwwroot/css/bootstrap.min.css.map">
       <publishTime>08/10/2017 20:52:12</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
       <publishTime>10/11/2017 09:05:46</publishTime>
     </File>
     <File Include="wwwroot/css/site.min.css">
-      <publishTime>01/10/2017 19:45:06</publishTime>
+      <publishTime>10/01/2017 19:45:06</publishTime>
     </File>
     <File Include="wwwroot/favicon.ico">
-      <publishTime>01/10/2017 19:45:06</publishTime>
+      <publishTime>10/01/2017 19:45:06</publishTime>
     </File>
     <File Include="wwwroot/images/banner1.svg">
       <publishTime>10/01/2017 19:45:06</publishTime>
@@ -173,19 +179,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/10/2017 20:51:22</publishTime>
     </File>
     <File Include="wwwroot/js/ErrorLoading.js">
-      <publishTime>05/10/2017 22:06:36</publishTime>
+      <publishTime>10/05/2017 22:06:36</publishTime>
     </File>
     <File Include="wwwroot/js/ItemDetails.js">
-      <publishTime>09/10/2017 17:14:19</publishTime>
+      <publishTime>10/09/2017 17:14:19</publishTime>
     </File>
     <File Include="wwwroot/js/ItemNew.js">
-      <publishTime>09/10/2017 10:28:05</publishTime>
+      <publishTime>10/09/2017 10:28:05</publishTime>
     </File>
     <File Include="wwwroot/js/ItemsBrowse.js">
       <publishTime>10/10/2017 11:41:22</publishTime>
     </File>
     <File Include="wwwroot/js/PurchaseEdit.js">
-      <publishTime>09/10/2017 15:42:10</publishTime>
+      <publishTime>10/09/2017 15:42:10</publishTime>
     </File>
     <File Include="wwwroot/js/PurchasesIndex.js">
       <publishTime>10/10/2017 12:56:40</publishTime>
@@ -194,10 +200,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/10/2017 12:35:41</publishTime>
     </File>
     <File Include="wwwroot/js/site.js">
-      <publishTime>01/10/2017 19:45:06</publishTime>
+      <publishTime>10/01/2017 19:45:06</publishTime>
     </File>
     <File Include="wwwroot/js/site.min.js">
-      <publishTime>01/10/2017 19:45:06</publishTime>
+      <publishTime>10/01/2017 19:45:06</publishTime>
     </File>
     <File Include="wwwroot/js/spinner.js">
       <publishTime>10/10/2017 12:40:25</publishTime>
@@ -206,397 +212,397 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/10/2017 11:01:55</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/.bower.json">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/bower.json">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/CHANGELOG.md">
-      <publishTime>10/10/2017 15:46:40</publishTime>
+      <publishTime>11/10/2017 11:47:09</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-theme.css">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-theme.css.map">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css.map">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css.map">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/dist/js/npm.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/fonts/glyphicons-halflings-regular.eot">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/fonts/glyphicons-halflings-regular.svg">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/fonts/glyphicons-halflings-regular.ttf">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/fonts/glyphicons-halflings-regular.woff">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/Gemfile">
-      <publishTime>10/10/2017 15:46:40</publishTime>
+      <publishTime>11/10/2017 11:47:09</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/Gemfile.lock">
-      <publishTime>10/10/2017 15:46:40</publishTime>
+      <publishTime>11/10/2017 11:47:09</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/grunt/.jshintrc">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/grunt/bs-commonjs-generator.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/grunt/bs-glyphicons-data-generator.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/grunt/bs-lessdoc-parser.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/grunt/bs-raw-files-generator.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/grunt/change-version.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/grunt/configBridge.json">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/grunt/npm-shrinkwrap.json">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/grunt/sauce_browsers.yml">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/Gruntfile.js">
-      <publishTime>10/10/2017 15:46:40</publishTime>
+      <publishTime>11/10/2017 11:47:09</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/ISSUE_TEMPLATE.md">
-      <publishTime>10/10/2017 15:46:40</publishTime>
+      <publishTime>11/10/2017 11:47:09</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/.jscsrc">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/.jshintrc">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/affix.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/alert.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/button.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/carousel.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/collapse.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/dropdown.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/modal.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/popover.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/scrollspy.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/tab.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/tooltip.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/js/transition.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/.csscomb.json">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/.csslintrc">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/alerts.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/badges.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/bootstrap.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/breadcrumbs.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/button-groups.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/buttons.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/carousel.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/close.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/code.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/component-animations.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/dropdowns.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/forms.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/glyphicons.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/grid.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/input-groups.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/jumbotron.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/labels.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/list-group.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/media.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/alerts.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/background-variant.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/border-radius.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/buttons.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/center-block.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/clearfix.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/forms.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/gradients.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/grid-framework.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/grid.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/hide-text.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/image.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/labels.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/list-group.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/nav-divider.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/nav-vertical-align.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/opacity.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/pagination.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/panels.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/progress-bar.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/reset-filter.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/reset-text.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/resize.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/responsive-visibility.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/size.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/tab-focus.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/table-row.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/text-emphasis.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/text-overflow.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/mixins/vendor-prefixes.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/modals.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/navbar.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/navs.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/normalize.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/pager.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/pagination.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/panels.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/popovers.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/print.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/progress-bars.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/responsive-embed.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/responsive-utilities.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/scaffolding.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/tables.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/theme.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/thumbnails.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/tooltip.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/type.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/utilities.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/variables.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/less/wells.less">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/LICENSE">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/nuget/bootstrap.less.nuspec">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/nuget/bootstrap.nuspec">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/nuget/MyGet.ps1">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/package.js">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/package.json">
-      <publishTime>10/10/2017 15:46:42</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/lib/bootstrap/README.md">
-      <publishTime>10/10/2017 15:46:41</publishTime>
+      <publishTime>11/10/2017 11:47:10</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation-unobtrusive/.bower.json">
       <publishTime>10/01/2017 19:45:07</publishTime>
@@ -608,7 +614,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2017 19:45:07</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation/.bower.json">
-      <publishTime>10/01/2017 19:45:07</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/bower.json">
+      <publishTime>11/10/2017 11:47:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/changelog.md">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/CONTRIBUTING.md">
+      <publishTime>11/10/2017 11:47:09</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.js">
       <publishTime>10/01/2017 19:45:07</publishTime>
@@ -622,23 +637,353 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.min.js">
       <publishTime>10/01/2017 19:45:07</publishTime>
     </File>
+    <File Include="wwwroot/lib/jquery-validation/Gruntfile.js">
+      <publishTime>11/10/2017 11:47:09</publishTime>
+    </File>
     <File Include="wwwroot/lib/jquery-validation/LICENSE.md">
       <publishTime>10/01/2017 19:45:07</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery/.bower.json">
-      <publishTime>10/01/2017 19:45:07</publishTime>
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/AUTHORS.txt">
+      <publishTime>11/10/2017 11:47:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/bower.json">
+      <publishTime>11/10/2017 11:47:09</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery/dist/jquery.js">
-      <publishTime>10/01/2017 19:45:07</publishTime>
+      <publishTime>11/10/2017 11:47:09</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery/dist/jquery.min.js">
-      <publishTime>10/01/2017 19:45:07</publishTime>
+      <publishTime>11/10/2017 11:47:09</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery/dist/jquery.min.map">
-      <publishTime>10/01/2017 19:45:07</publishTime>
+      <publishTime>11/10/2017 11:47:09</publishTime>
     </File>
     <File Include="wwwroot/lib/jquery/LICENSE.txt">
-      <publishTime>10/01/2017 19:45:07</publishTime>
+      <publishTime>11/10/2017 11:47:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/README.md">
+      <publishTime>11/10/2017 11:47:09</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/.jshintrc">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/ajax.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/ajax/jsonp.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/ajax/load.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/ajax/parseJSON.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/ajax/parseXML.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/ajax/script.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/ajax/var/location.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/ajax/var/nonce.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/ajax/var/rquery.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/ajax/xhr.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/attributes.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/attributes/attr.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/attributes/classes.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/attributes/prop.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/attributes/support.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/attributes/val.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/callbacks.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/core.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/core/access.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/core/init.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/core/parseHTML.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/core/ready.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/core/support.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/core/var/rsingleTag.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css/addGetHookIf.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css/adjustCSS.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css/curCSS.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css/defaultDisplay.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css/hiddenVisibleSelectors.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css/showHide.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css/support.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css/var/cssExpand.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css/var/getStyles.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css/var/isHidden.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css/var/rmargin.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css/var/rnumnonpx.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/css/var/swap.js">
+      <publishTime>11/10/2017 11:47:10</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/data.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/data/accepts.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/data/Data.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/data/support.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/data/var/acceptData.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/data/var/dataPriv.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/data/var/dataUser.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/deferred.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/deprecated.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/dimensions.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/effects.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/effects/animatedSelector.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/effects/support.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/effects/Tween.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/event.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/event/ajax.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/event/alias.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/event/focusin.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/event/support.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/event/trigger.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/exports/amd.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/exports/global.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/intro.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/jquery.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/manipulation.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/manipulation/buildFragment.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/manipulation/createSafeFragment.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/manipulation/getAll.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/manipulation/setGlobalEval.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/manipulation/support.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/manipulation/var/nodeNames.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/manipulation/var/rcheckableType.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/manipulation/var/rleadingWhitespace.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/manipulation/var/rscriptType.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/manipulation/var/rtagName.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/manipulation/wrapMap.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/manipulation/_evalUrl.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/offset.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/outro.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/queue.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/queue/delay.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/selector-native.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/selector-sizzle.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/selector.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/serialize.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/support.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/traversing.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/traversing/findFilter.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/traversing/var/dir.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/traversing/var/rneedsContext.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/traversing/var/siblings.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/arr.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/class2type.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/concat.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/deletedIds.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/document.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/documentElement.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/hasOwn.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/indexOf.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/pnum.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/push.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/rcssNum.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/rnotwhite.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/slice.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/support.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/var/toString.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/src/wrap.js">
+      <publishTime>11/10/2017 11:47:11</publishTime>
     </File>
     <File Include="wwwroot/license.html">
       <publishTime>10/11/2017 09:00:44</publishTime>

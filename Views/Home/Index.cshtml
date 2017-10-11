@@ -3,64 +3,110 @@
 
 @{
     ViewData["Title"] = "Home";
+
+    string username = HttpContextAccessor.HttpContext.Session.GetString("Username");
 }
 
-<h1>Hello, @HttpContextAccessor.HttpContext.Session.GetString("Username")!</h1>
-
-<a asp-controller="Account" asp-action="Home">Account page</a><br />
-<a asp-controller="Account" asp-action="Logout">Log out</a>
-
-<br /><br />
-
-@* New category form section *@
-<form class="form bg-light p-2" asp-controller="Category" asp-action="New" method="POST">
-    @Html.AntiForgeryToken()
-    <h3>Create new category</h3>
-    <div class="form-row">
-        <div class="col-12 col-md-8 mb-2">
-            <label class="sr-only" for="name" aria-hidden="true">Category name</label>
-            <input type="text" id="name" name="name" class="form-control" placeholder="New category name" />
-        </div>
-        <div class="col-12 col-md-4">
-            <button type="submit" class="btn btn-primary form-control">Create</button>
-        </div>
+<div class="row bg-xx-1 py-2">
+    <div class="col-lg-12 text-xx-6 text-center">
+        <h1 class="h-intro">Hello, @username!</h1>
     </div>
-</form>
+</div>
 
-<br />
+<div class="row bg-xx-7 py-5">
 
-@* New measure form section *@
-<form class="form bg-light p-2" asp-controller="Measure" asp-action="New" method="POST">
-    @Html.AntiForgeryToken()
-    <h3>Create new measure</h3>
-    <div class="form-row">
-        <div class="col-12 col-md-8 mb-2">
-            <label class="sr-only" for="name" aria-hidden="true">Measure name</label>
-            <input type="text" id="name" name="name" class="form-control" placeholder="New measure name" />
-        </div>
-        <div class="col-12 col-md-4">
-            <button type="submit" class="btn btn-primary form-control">Create</button>
-        </div>
+    <div class="col-12 col-lg-6 text-center mb-5">
+        <img src="~/images/receipt.png" />
+        <h3 class="h-intro text-white">New purchase</h3>
+        <hr class="bg-xx-5" />
+        <p class="lead p-intro text-white mb-4">
+            Just acquired something new? Quickly add it in your purchase list and don't skip an expense!
+        </p>
+        <a class="btn-lg bg-xx-5 text-white h-intro" asp-controller="Purchase" asp-action="New">New purchase</a>
     </div>
-</form>
 
-<br />
-
-@* New currency form section *@
-<form class="form bg-light p-2" asp-controller="Currency" asp-action="New" method="POST">
-    @Html.AntiForgeryToken()
-    <h3>Create new currency</h3>
-    <div class="form-row">
-        <div class="col-12 col-md-5 mb-2">
-            <label class="sr-only" for="name" aria-hidden="true">Currency name</label>
-            <input type="text" id="name" name="name" class="form-control" placeholder="Currency (EUR)" />
-        </div>
-        <div class="col-12 col-md-5 mb-2">
-            <label class="sr-only" for="fullName" aria-hidden="true">Currency full name</label>
-            <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Full name (Euro)" />
-        </div>
-        <div class="col-12 col-md-2">
-            <button type="submit" class="btn btn-primary form-control">Create</button>
-        </div>
+    <div class="col-12 col-lg-6 text-center mb-2">
+        <img src="~/images/add.png" />
+        <h3 class="h-intro text-white">Can't find your item?</h3>
+        <hr class="bg-xx-5" />
+        <p class="lead p-intro text-white mb-4">
+            If you don't find the item you are looking for in our database - please be so good to take your time and add it. Others will definitely
+            find it helpful!
+        </p>
+        <a class="btn-lg bg-xx-5 text-white h-intro" asp-controller="Item" asp-action="New">New item</a>
     </div>
-</form>
+
+</div>
+
+<div class="row bg-xx-5 py-5">
+
+    <div class="col-12 col-lg-4 text-center mb-2">
+        <img src="~/images/flag.png" />
+        <h3 class="h-intro text-white">Can't find your category?</h3>
+        <hr class="bg-xx-7" />
+        <p class="lead p-intro text-white mb-4">
+            Don't worry! ShopTracker is fresh and relies on you to make it powerfull! Please take your time to add the category you were looking for. Others will definitely
+            find it helpful!
+        </p>
+        <form class="form mb-4" asp-controller="Category" asp-action="New" method="POST">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label for="name" class="sr-only">Category name</label>
+                <input id="name" type="text" class="form-control form-control-lg border-sharp" name="name" placeholder="Category name" autofocus />
+                <small class="form-help-intro">The category name must be 3-25 characters long</small>
+            </div>
+
+            <button type="submit" class="btn-lg form-control border-sharp bg-xx-8 text-white">Add category</button>
+        </form>
+    </div>
+
+    <div class="col-12 col-lg-4 text-center mb-2">
+        <img src="~/images/balance.png" />
+        <h3 class="h-intro text-white">Can't find your measure?</h3>
+        <hr class="bg-xx-7" />
+        <p class="lead p-intro text-white mb-4">
+            Don't worry! ShopTracker is fresh and relies on you to make it powerfull! Please take your time to add the measure you were looking for. Others will definitely
+            find it helpful!
+        </p>
+        <form class="form mb-4" asp-controller="Measure" asp-action="New" method="POST">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label for="name" class="sr-only">Measure name</label>
+                <input id="name" type="text" class="form-control form-control-lg border-sharp" name="name" placeholder="Measure name" autofocus />
+                <small class="form-help-intro">The measure name must be 3-25 characters long</small>
+            </div>
+
+            <button type="submit" class="btn-lg form-control border-sharp bg-xx-8 text-white">Add measure</button>
+        </form>
+    </div>
+
+    <div class="col-12 col-lg-4 text-center mb-2">
+        <img src="~/images/pound-sterling.png" />
+        <h3 class="h-intro text-white">Can't find your currency?</h3>
+        <hr class="bg-xx-7" />
+        <p class="lead p-intro text-white mb-4">
+            Don't worry! ShopTracker is fresh and relies on you to make it powerfull! Please take your time to add the currency you were looking for. Others will definitely
+            find it helpful!
+        </p>
+        <form class="form" asp-controller="Currency" asp-action="New" method="POST">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group mb-2">
+                <label for="name" class="sr-only">Currency name</label>
+                <input id="name" type="text" class="form-control form-control-lg border-sharp" name="name" placeholder="Currency (GBP)" autofocus />
+                <small class="form-help-intro">The currency must be exactly 3 characters long</small>
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="fullName" class="sr-only">Currency full name</label>
+                <input id="fullName" type="text" class="form-control form-control-lg border-sharp" name="fullName" placeholder="Full name (Pound Sterling)" autofocus />
+                <small class="form-help-intro">The currency name must be max 20 characters long</small>
+            </div>
+
+            <button type="submit" class="btn-lg form-control border-sharp bg-xx-8 text-white">Add currency</button>
+        </form>
+    </div>
+
+</div>

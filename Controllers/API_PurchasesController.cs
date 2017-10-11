@@ -68,7 +68,7 @@ namespace ShopTracker.Controllers
         [Route("/api/purchases/new")]
         [ServiceFilter(typeof(ShopTracker.Filters.AuthorizedFilter))]
         [HttpPost]
-        public IActionResult NewPurchase(int userId, int groupId, int itemId, int currency, string quantity, string price, string date)
+        public IActionResult NewPurchase(int userId, int groupId, int itemId, int currency, string quantity, string price, string date, string provider)
         {
             // Check for null input
 
@@ -105,8 +105,8 @@ namespace ShopTracker.Controllers
 
             // Convert to decimal
 
-            decimal quantityR = Convert.ToDecimal(quantity);
-            decimal priceR = Convert.ToDecimal(price);
+            decimal quantityR = Decimal.Parse(quantity, culture);
+            decimal priceR = Decimal.Parse(price, culture);
 
             // Attempt to create new purchase model
 
@@ -118,7 +118,8 @@ namespace ShopTracker.Controllers
                 CurrencyID = currency,
                 Date = dateR,
                 Price = priceR,
-                Quantity = quantityR
+                Quantity = quantityR,
+                Provider = provider
             };
 
             // Attempt to validate new model

@@ -29,7 +29,7 @@ namespace ShopTracker.Controllers
             // If user is not logged in or not admin
             // redirect to the home page
             //
-            if (!IsLogged(HttpContext) || !HasRole(HttpContext, "Admin"))
+            if (!HasRole(HttpContext, "Admin"))
             {
                 AddErrorMessage(TempData, "You don't have access to this part of the website!", "Restricted Access!");
                 return RedirectToAction("Index", "Home");
@@ -53,10 +53,6 @@ namespace ShopTracker.Controllers
         [AutoValidateAntiforgeryToken]
         public ActionResult New(string name)
         {
-            // If user not logged in redirect to the home page
-            //
-            if (!IsLogged(HttpContext)) return RedirectToAction("Index", "Home");
-
             // Check for null input
             //
             if (name == null || name == "")
@@ -103,7 +99,7 @@ namespace ShopTracker.Controllers
             }
             catch
             {
-                AddErrorMessage(TempData, "An error was encountered while saving the new category to the database!");
+                AddErrorMessage(TempData, "An error was encountered while saving the new measure to the database!");
             }
 
             return RedirectToAction("Index", "Home");
@@ -114,10 +110,9 @@ namespace ShopTracker.Controllers
         {
             // If user not logged or admin gtfo
             //
-            bool Logged = IsLogged(HttpContext);
             bool Admin = HasRole(HttpContext, "Admin");
             bool Mod = HasRole(HttpContext, "Moderator");
-            if (!(Logged && (Admin || Mod)))
+            if (!(Admin || Mod))
             {
                 AddErrorMessage(TempData, "This area is with restricted access!", "Restricted Access!");
                 return RedirectToAction("Index", "Home");
@@ -157,10 +152,9 @@ namespace ShopTracker.Controllers
             // If user not logged in or admin
             // Invalidate edit request
             //
-            bool Logged = IsLogged(HttpContext);
             bool Admin = HasRole(HttpContext, "Admin");
             bool Mod = HasRole(HttpContext, "Moderator");
-            if (!(Logged && (Admin || Mod)))
+            if (!(Admin || Mod))
             {
                 AddErrorMessage(TempData, "You don't have rights to do that!", "Restricted Access!");
                 return RedirectToAction("Index", "Home");
@@ -206,7 +200,7 @@ namespace ShopTracker.Controllers
         {
             // Only admin can delete stuff
             //
-            if (!IsLogged(HttpContext) || !HasRole(HttpContext, "Admin"))
+            if (!HasRole(HttpContext, "Admin"))
             {
                 AddErrorMessage(TempData, "This action is restricted to superiors only", "Restricted Access!");
                 return RedirectToAction("Index", "Home");

@@ -4,51 +4,52 @@
     ViewData["Title"] = "New";
 }
 
-<h2>New</h2>
-
-<form class="form bg-light p-2" asp-controller="Item" asp-action="New" method="POST">
-    @Html.AntiForgeryToken()
-    <h3>Add new item</h3>
-    <div class="form-row">
-        <div class="col-12 col-md-4 mb-2">
-            <label for="name" class="sr-only" aria-hidden="true">Item name</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Item name (Coca-Cola)" />
-            <div class="alert alert-danger d-none mb-0 mt-2">
-                @Html.ValidationMessageFor(u => u.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="col-12 col-md-8 mb-2">
-            <label for="description" class="sr-only" aria-hidden="true">Item description</label>
-            <input type="text" class="form-control" id="description" name="description" placeholder="Item description (A carbonated drink)" />
-            <div class="alert alert-danger d-none mb-0 mt-2">
-                @Html.ValidationMessageFor(u => u.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="col-12 col-md-4 mb-2">
-            <div class="form-group">
-                <label for="category" class="sr-only" aria-hidden="true">Category select</label>
-                <select class="form-control" id="category" name="category"></select>
-            </div>
-        </div>
-        <div class="col-12 col-md-4 mb-2">
-            <div class="form-group">
-                <label for="measure" class="sr-only" aria-hidden="true">Measure select</label>
-                <select class="form-control" id="measure" name="measure" placeholder="Measure"></select>
-            </div>
-        </div>
-        <div class="alert alert-danger d-none mb-0 mt-2">
-            @Html.ValidationMessageFor(u => u.CategoryID, "", new { @class = "text-danger" })
-        </div>
-        <div class="alert alert-danger d-none mb-0 mt-2">
-            @Html.ValidationMessageFor(u => u.MeasureID, "", new { @class = "text-danger" })
-        </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary form-control">Add item</button>
-        </div>
+<div class="row bg-xx-1 py-2">
+    <div class="col-12 text-center">
+        <h1 class="h-intro text-xx-6">Add new item</h1>
     </div>
-</form>
+</div>
+
+<div class="row bg-xx-5 py-5">
+
+    <div class="col-12">
+        <form class="form" asp-controller="Item" asp-action="New" method="POST">
+            @Html.AntiForgeryToken()
+
+            <div class="form-row">
+
+                <div class="col-12 col-md-4 mb-2">
+                    <label for="name" class="text-white">Name</label>
+                    <input type="text" class="form-control border-sharp" id="name" name="name" placeholder="Coca-Cola" />
+                </div>
+
+                <div class="col-12 col-md-8 mb-2">
+                    <label for="description" class="text-white">Description</label>
+                    <input type="text" class="form-control border-sharp" id="description" name="description" placeholder="A carbonated drink (Optional)" />
+                </div>
+
+                <div class="col-12 col-md-4 mb-2">
+                    <label for="category" class="text-white">Category</label>
+                    <select class="form-control custom-select border-sharp" id="category" name="category"></select>
+                </div>
+
+                <div class="col-12 col-md-4 mb-2">
+                    <label for="measure" class="text-white">Measure</label>
+                    <select class="form-control custom-select border-sharp" id="measure" name="measure"></select>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn-lg form-control border-sharp bg-xx-7 text-white">Add item</button>
+                </div>
+
+
+            </div>
+        
+        </form>
+    </div>
+
+</div>
 
 @section Scripts {
-    <script src="~/js/ErrorLoading.js"></script>
     <script src="~/js/ItemNew.js"></script>
 }

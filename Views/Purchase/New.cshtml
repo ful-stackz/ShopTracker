@@ -1,81 +1,74 @@
 ﻿
 @{
     ViewData["Title"] = "New";
+    int userid = Int32.Parse(ViewData["UserID"].ToString());
 }
 
-<h2>New</h2>
-    
-
-<form class="form p-2 bg-light" asp-controller="Purchase" asp-action="New">
-    @Html.AntiForgeryToken()
-    <input type="text" id="userId" name="userId" value="@ViewData["UserID"]" hidden aria-hidden="true" />
-    <h3>Add new purchase</h3>
-
-    <div class="form-row">
-
-        <div class="col-12 col-md-6 mb-2">
-            <label for="item" class="sr-only" aria-hidden="true">Purchase name</label>
-            <div class="input-group">
-                <select class="selectpicker form-control" id="item" name="item" data-live-search="true"></select>
-                <span class="input-group-addon" id="category">Category</span>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-3 mb-2">
-            <label for="group" class="sr-only" aria-hidden="true">Purchase group</label>
-            <select id="group" name="group" class="form-control"></select>
-        </div>
-
-        <div class="col-12 col-md-3 mb-2">
-            <label for="provider" class="sr-only" aria-hidden="true">Purchase provider</label>
-            <input id="provider" name="provider" class="form-control" placeholder="Provider (Metro)" />
-        </div>
-
-        <div class="col-12 col-md-4 mb-2">
-            <label for="quantity" class="sr-only" aria-hidden="true">Quantity</label>
-            <div class="input-group">
-                <input type="text" id="quantity" name="quantity" class="form-control" placeholder="Quantity (1)" />
-                <span class="input-group-addon" id="measure">pieces</span>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4 mb-2">
-            <label for="price" class="sr-only" aria-hidden="true">Price</label>
-            <div class="input-group">
-                <input type="text" id="price" name="price" class="form-control" placeholder="Price (5.00)" />
-                <span class="input-group-addon p-0">
-                    <select id="currency" name="currency" class="custom-select">
-                    </select>
-                </span>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4 mb-2">
-            <label for="date" class="sr-only" aria-hidden="true">Date</label>
-            <input type="datetime" id="date" name="date" class="form-control" placeholder="Date (Day-Month-Year)" />
-        </div>
-
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary form-control" >Add purchase</button>
-        </div>
-
+<div class="row bg-xx-1 py-2">
+    <div class="col-12 text-center">
+        <h1 class="h-intro text-xx-6">Add new purchase</h1>
     </div>
-</form>
+</div>
+    
+<div class="row bg-xx-5 py-5">
 
-<table class="table d-none" id="itemsTable">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Measure</th>
-            <th>Add</th>
-        </tr>
-    </thead>
-    <tbody>
+    <div class="col-12">
+        <form class="form" asp-controller="Purchase" asp-action="New" method="POST">
+            @Html.AntiForgeryToken()
+            <input type="text" id="userId" name="userId" value="@userid" hidden aria-hidden="true" />
 
-    </tbody>
-</table>
+            <div class="form-row">
+
+                <div class="col-12 col-lg-6 mb-2">
+                    <label class="text-white" for="item">Item</label>
+                    <div class="input-group">
+                        <select class="selectpicker form-control border-sharp" id="item" name="item" data-live-search="true"></select>
+                        <span class="input-group-addon border-sharp" id="category">Category</span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-3 mb-2">
+                    <label class="text-white" for="provider">Provider</label>
+                    <input id="provider" name="provider" class="form-control border-sharp" placeholder="Metro" value="Unknown" />
+                </div>
+
+                <div class="col-12 col-lg-3 mb-2">
+                    <label class="text-white" for="group">Add to group</label>
+                    <select id="group" name="group" class="form-control border-sharp"></select>
+                </div>
+
+                <div class="col-12 col-md-4 mb-2">
+                    <label class="text-white" for="quantity">Quantity</label>
+                    <div class="input-group">
+                        <input type="text" id="quantity" name="quantity" class="form-control border-sharp" placeholder="1,00" />
+                        <span class="input-group-addon border-sharp" id="measure">-</span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-2">
+                    <label class="text-white" for="price">Price</label>
+                    <div class="input-group">
+                        <input type="text" id="price" name="price" class="form-control border-sharp" placeholder="5,00" />
+                        <span class="input-group-addon p-0 border-sharp">
+                            <select id="currency" name="currency" class="custom-select border-sharp"></select>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-2">
+                    <label class="text-white" for="date">Date</label>
+                    <input type="datetime" id="date" name="date" class="form-control border-sharp" placeholder="Day/Month/Year)" />
+                </div>
+
+                <div class="col-12 mt-4">
+                    <button type="submit" class="btn-lg form-control border-sharp bg-xx-7 text-white">Add purchase</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+</div>
 
 @section Scripts {
     <script src="~/js/PurchasesNew.js"></script>

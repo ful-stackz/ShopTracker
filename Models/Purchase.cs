@@ -40,7 +40,7 @@ namespace ShopTracker.Models
 
         public Purchase()
         {
-            if (Provider == null) Provider = "Unknown";
+            if (Provider == null || Provider == "") Provider = "Unknown";
         }
     }
 }

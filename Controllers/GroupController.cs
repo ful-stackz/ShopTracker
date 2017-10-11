@@ -60,14 +60,7 @@ namespace ShopTracker.Controllers
             //
             if (currUser.Groups.Where(g => g.Name == name).FirstOrDefault() != null)
             {
-                AddMessage(TempData, new Message()
-                {
-                    Type = "Danger",
-                    Title = "Group duplicate",
-                    Body = "A group with the same name exists"
-                });
-                TempData["Errors"] = "HasErrors";
-                TempData["ErrorsList"] = new Dictionary<string, string>() { { "GroupName", "A group with that name already exists" } };
+                AddErrorMessage(TempData, "A group with the same name already exists");
                 return RedirectToAction("Home", "Account");
             }
 
@@ -84,14 +77,7 @@ namespace ShopTracker.Controllers
             //
             if (TryValidateModel(newGroup) == false)
             {
-                AddMessage(TempData, new Message()
-                {
-                    Type = "Danger",
-                    Title = "Model validation",
-                    Body = "Model is not valid"
-                });
-                TempData["Errors"] = "HasErrors";
-                TempData["ErrorsList"] = new Dictionary<string, string>() { { "Group", "The group couldn't be validated" } };
+                AddErrorMessage(TempData, "Model is not valid");
                 return RedirectToAction("Home", "Account");
             }
 
@@ -104,27 +90,17 @@ namespace ShopTracker.Controllers
 
                 // If everything is okay go to user's home page
                 //
-                AddMessage(TempData, new Message()
-                {
-                    Type = "Success",
-                    Title = "Making new DB record",
-                    Body = "Saved successfully!"
-                });
-                return RedirectToAction("Home", "Account");
+                AddOkMessage(TempData, "New group created successfully!");
             }
             catch
             {
                 // If it fails to add new record to db
                 // Redirect to users home page
                 //
-                AddMessage(TempData, new Message()
-                {
-                    Type = "Danger",
-                    Title = "Making new DB record",
-                    Body = "Error while trying to save to DB!"
-                });
-                return RedirectToAction("Home", "Account");
+                AddErrorMessage(TempData, "Error while creating your group!");
             }
+            
+            return RedirectToAction("Home", "Account");
         }
 
         [HttpGet]
@@ -149,13 +125,7 @@ namespace ShopTracker.Controllers
 
             if (group.UserID != user.UserID)
             {
-                AddMessage(TempData, new Message()
-                {
-                    Type = "Danger",
-                    Title = "No rights to do this action",
-                    Body = "The group are attempting to delete is not yours!"
-                });
-                
+                AddErrorMessage(TempData, "The group are attempting to delete is not yours!");
                 return RedirectToAction("Home", "Account");
             }
 
@@ -170,13 +140,7 @@ namespace ShopTracker.Controllers
             //
             if (user.Groups.Count == 1)
             {
-                AddMessage(TempData, new Message()
-                {
-                    Type = "Danger",
-                    Title = "Group delete error",
-                    Body = "You can't delete your only group! Make another and then delete this one."
-                });
-
+                AddErrorMessage(TempData, "You can't delete your only group! Make another and then delete this one.");
                 return RedirectToAction("Home", "Account");
             }
 
@@ -185,21 +149,11 @@ namespace ShopTracker.Controllers
                 DbContext.Remove(group);
                 DbContext.SaveChanges();
 
-                AddMessage(TempData, new Message()
-                {
-                    Type = "Success",
-                    Title = "Group removal",
-                    Body = "You sucessfully removed the group!"
-                });
+                AddOkMessage(TempData, "You sucessfully removed the group!");
             }
             catch
             {
-                AddMessage(TempData, new Message()
-                {
-                    Type = "Danger",
-                    Title = "Group removal error",
-                    Body = "An error was encountered while trying to remove group db record"
-                });
+                AddErrorMessage(TempData, "An error was encountered while trying to remove the group!");
             }
 
             return RedirectToAction("Home", "Account");

@@ -302,6 +302,7 @@ var MakeFormModal = function() {
         let priceCol = $('<div>').attr('class', 'col-12 mb-2');
         let dateCol = $('<div>').attr('class', 'col-12 mb-2');
         let groupCol = $('<div>').attr('class', 'col-12 mb-2');
+        let providerCol = $('<div>').attr('class', 'col-12 mb-2');
 
         // create id boxes for
         // userid and itemid
@@ -344,6 +345,10 @@ var MakeFormModal = function() {
 
         let groupSelect = $('<select>').attr('class', 'custom-select form-control').attr('id', 'groupId').attr('name', 'groupId');
 
+        // create input for provider
+
+        let providerBox = $('<input>').attr('type', 'text').attr('name', 'provider').attr('class', 'form-control').val('Unknown').attr('placeholder', 'Provider (Metro)');
+
         // assemble the form elements
 
         form.append(userIdBox);
@@ -353,8 +358,9 @@ var MakeFormModal = function() {
         priceCol.append(priceGroup);
         dateCol.append(dateBox);
         groupCol.append(groupSelect);
+        providerCol.append(providerBox);
 
-        form.append(formRow.append(nameCol).append(quantCol).append(priceCol).append(dateCol).append(groupCol));
+        form.append(formRow.append(nameCol).append(quantCol).append(priceCol).append(dateCol).append(groupCol).append(providerCol));
 
         // load user groups into the group select
 

@@ -58,8 +58,8 @@ namespace ShopTracker.Controllers
             if (price.Contains(".")) price = price.Replace(".", ",");
             
             // Convert to decimal
-            decimal quantityR = Convert.ToDecimal(quantity);
-            decimal priceR = Convert.ToDecimal(price);
+            decimal quantityR = Decimal.Parse(quantity, culture);
+            decimal priceR = Decimal.Parse(price, culture);
 
             // Check if item valid
             var checkItem = DbContext.Items.Find(item);

@@ -13222,9 +13222,6 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
       "projectUniqueName": "E:\\Projects\\GitHub\\ShopTracker\\ShopTracker.csproj",
       "projectName": "ShopTracker",
@@ -13260,6 +13257,31 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "2.0.0",
+            "autoReferenced": true
+          },
+          "bootstrap-select": {
+            "target": "Package",
+            "version": "1.12.4"
+          },
+          "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "2.0.0"
+          },
+          "Microsoft.AspNetCore.Http": {
+            "target": "Package",
+            "version": "2.0.0"
+          },
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+            "target": "Package",
+            "version": "2.0.0"
+          },
+          "Microsoft.AspNetCore.Session": {
+            "target": "Package",
+            "version": "2.0.0"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "2.0.0"
@@ -13271,31 +13293,6 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "2.0.0"
-          },
-          "Microsoft.AspNetCore.Mvc.ViewFeatures": {
-            "target": "Package",
-            "version": "2.0.0"
-          },
-          "Microsoft.AspNetCore.Http": {
-            "target": "Package",
-            "version": "2.0.0"
-          },
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "2.0.0",
-            "autoReferenced": true
-          },
-          "Microsoft.AspNetCore.All": {
-            "target": "Package",
-            "version": "2.0.0"
-          },
-          "Microsoft.AspNetCore.Session": {
-            "target": "Package",
-            "version": "2.0.0"
-          },
-          "bootstrap-select": {
-            "target": "Package",
-            "version": "1.12.4"
           },
           "Newtonsoft.Json": {
             "target": "Package",

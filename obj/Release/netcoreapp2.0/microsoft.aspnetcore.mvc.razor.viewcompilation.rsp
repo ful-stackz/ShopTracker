@@ -22,8 +22,6 @@ E:\Projects\GitHub\ShopTracker
 --file=E:\Projects\GitHub\ShopTracker\Views\Item\Edit.cshtml
 --file=E:\Projects\GitHub\ShopTracker\Views\Item\Index.cshtml
 --file=E:\Projects\GitHub\ShopTracker\Views\Item\New.cshtml
---file=E:\Projects\GitHub\ShopTracker\Views\Item\_Categories.cshtml
---file=E:\Projects\GitHub\ShopTracker\Views\Item\_Measures.cshtml
 --file=E:\Projects\GitHub\ShopTracker\Views\Measure\Edit.cshtml
 --file=E:\Projects\GitHub\ShopTracker\Views\Measure\Index.cshtml
 --file=E:\Projects\GitHub\ShopTracker\Views\Purchase\Edit.cshtml

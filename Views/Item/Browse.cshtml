@@ -1,32 +1,69 @@
 ﻿@model List<ShopTracker.Models.Item>
 @{
     ViewData["Title"] = "Browse";
+    int userid = Int32.Parse(ViewData["UserID"].ToString());
 }
-<div class="jumbotron">
-    <h1 class="display-4">
-        Browser Items
-    </h1>
-    <p class="lead mb-0">
-        Browse all the items available<br />
-        Or <a asp-controller="Item" asp-action="New">create</a> a new one!
-    </p>
+
+<div class="row bg-xx-1 py-2">
+    <div class="col-12 text-center">
+        <h1 class="h-intro text-xx-6">Browse items</h1>
+    </div>
 </div>
-<input id="searchBar" type="text" class="w-100 mb-1 form-control" placeholder="Search items" />
-<input id="userId" type="text" value="@ViewData["UserID"]" hidden aria-hidden="true" />
 
+<div class="row bg-xx-7 py-5">
 
-<table class="table" id="itemsTable">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Measure</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
+    <div class="col-12 col-lg-6 text-center">
+        <img src="~/images/search.png" />
+        <h3 class="h-intro text-white">Search all the items</h3>
+        <hr class="bg-xx-5" />
+        <p class="p-intro lead text-xx-5">
+            Search through all of the items currently available on ShopTracker.
+        </p>
+    </div>
+
+    <div class="col-12 col-lg-6 text-center">
+        <img src="~/images/add.png" />
+        <h3 class="h-intro text-white">Add what is missing</h3>
+        <hr class="bg-xx-5" />
+        <p class="p-intro lead text-xx-5">
+            Search through all of the items currently available on ShopTracker.
+        </p>
+    </div>
+
+</div>
+
+<div class="row bg-xx-5 py-5">
+
+    <div class="col-12">
+
+        <input type="text" id="userId" value="@userid" aria-hidden="true" hidden />
+        <label for="searchBar" class="text-white">Search items</label>
+        <input type="text" id="searchBar" class="form-control border-sharp" placeholder="Coca-Cola" autofocus />
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div id="itemsHolder" class="col-12 py-3" style="background-color: #5fa0ba !important;">
+        <div class="card-columns">
+
+        </div>
+    </div>
+
+    <div id="itemsEmpty" class="col-12 text-center bg-xx-2 py-5 d-none">
+        <img src="~/images/question.png" />
+        <h3 class="h-intro text-white">Seems like the item you're looking for doesn exist. Is that okay?</h3>
+        <hr class="bg-xx-9 w-50" />
+        <p class="p-intro lead text-xx-9 mb-4">
+            ShopTracker is still fresh, so it may not have everything you ever wanted. Would you be so kind to add the item you were looking for to 
+            ShopTracker's database? Others will definitely appreciate it!
+        </p>
+        <a class="btn-lg bg-xx-5 text-white h-intro" asp-controller="Item" asp-action="New">New item</a>
+    </div>
+
+</div>
 
 @section Scripts {
     <script src="~/js/ItemsBrowse.js"></script>

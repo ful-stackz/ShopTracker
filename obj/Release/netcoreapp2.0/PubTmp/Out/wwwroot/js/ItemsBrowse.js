@@ -198,30 +198,60 @@ var ShowItems = function() {
 
     let func = $.Deferred(function() {
 
+        // if there are no visible items
+        // show empty message
+
+        if (V_ITEMS.length == 0 || V_ITEMS == null) {
+            $('#itemsHolder').removeClass('d-block').addClass('d-none');
+            $('#itemsEmpty').removeClass('d-none').addClass('d-block');
+
+            this.resolve();
+            return;
+        }
+
+        $('#itemsHolder').removeClass('d-none').addClass('d-block');
+        $('#itemsEmpty').removeClass('d-block').addClass('d-none');
+
+
         // shortcut the visible items
-        // shortcut the tbody of the items table
+        // shortcut the cards container
         // empty it and fill it with
         // all the visible items
 
         let items = V_ITEMS;
 
-        let tBody = $('#itemsTable > tbody');
-        
-        tBody.html('');
+        let cards = $('.card-columns');
+
+        cards.html('');
 
         for (var i = 0; i < items.length; i++) {
 
-            tBody.append($('<tr>')
-                .append($('<td>').html(items[i].name))
-                .append($('<td>').html(items[i].description))
-                .append($('<td>').html(items[i].category.name))
-                .append($('<td>').html(items[i].measure.name))
-                .append($('<td>')
-                    .append($('<button>')
-                        .attr('class', 'btn btn-primary btn-modal')
-                        .attr('target-item', items[i].itemID)
-                        .html('Details'))
-            ));
+            let card = $('<div>').attr('class', 'card bg-xx-1 border-sharp');
+            let cBody = $('<div>').attr('class', 'card-body');
+            let cTitle = $('<h5>').attr('class', 'card-title');
+            let cSub = $('<h6>').attr('class', 'card-subtitle mt-2 mb-3 text-muted');
+            let cBtn = $('<button>').attr('class', 'btn bg-xx-5 text-white border-sharp btn-modal').attr('target-item', items[i].itemID).html('Details');
+
+            // append item name to title
+            // append item category to title
+            // append item measure to title
+            
+            let iNam = $('<span>').attr('class', 'text-xx-2').html(items[i].name);
+            let iDes = $('<small>').attr('class', 'text-xx-5').html(items[i].description);
+
+            let iCat = $('<span>').attr('class', 'badge badge-secondary border-sharp').html(items[i].category.name);
+            let iMes = $('<span>').attr('class', 'badge badge-info border-sharp').html(items[i].measure.name);
+            
+            cTitle.append(iNam).append(' ').append(iDes);
+            cSub.append(iCat).append(' ').append(iMes);
+
+            // append card title, subtitle and button to card body
+            // append card body to card
+            // append card to card-columns
+
+            card.append(cBody.append(cTitle).append(cSub).append(cBtn));
+
+            cards.append(card);
 
         }
 
@@ -302,6 +332,7 @@ var MakeFormModal = function() {
         let priceCol = $('<div>').attr('class', 'col-12 mb-2');
         let dateCol = $('<div>').attr('class', 'col-12 mb-2');
         let groupCol = $('<div>').attr('class', 'col-12 mb-2');
+        let providerCol = $('<div>').attr('class', 'col-12 mb-2');
 
         // create id boxes for
         // userid and itemid
@@ -344,6 +375,10 @@ var MakeFormModal = function() {
 
         let groupSelect = $('<select>').attr('class', 'custom-select form-control').attr('id', 'groupId').attr('name', 'groupId');
 
+        // create input for provider
+
+        let providerBox = $('<input>').attr('type', 'text').attr('name', 'provider').attr('class', 'form-control').val('Unknown').attr('placeholder', 'Provider (Metro)');
+
         // assemble the form elements
 
         form.append(userIdBox);
@@ -353,8 +388,9 @@ var MakeFormModal = function() {
         priceCol.append(priceGroup);
         dateCol.append(dateBox);
         groupCol.append(groupSelect);
+        providerCol.append(providerBox);
 
-        form.append(formRow.append(nameCol).append(quantCol).append(priceCol).append(dateCol).append(groupCol));
+        form.append(formRow.append(nameCol).append(quantCol).append(priceCol).append(dateCol).append(groupCol).append(providerCol));
 
         // load user groups into the group select
 

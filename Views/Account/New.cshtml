@@ -4,45 +4,32 @@
     ViewData["Title"] = "Sign up";
 }
 
-<form asp-controller="Account" asp-action="New" method="POST" class="mt-5">
-    @Html.AntiForgeryToken()
-    <div class="text-center w-100">
-        <h1 class="display-4">Sign up</h1>
-    </div>
-    <div class="form-row">
-        <div class="d-none d-md-block col-md-3"></div>
-        <div class="form-group col-12 col-md-6">
-            <label for="username" class="col-form-label">Username</label>
-            <input id="username" type="text" class="form-control" name="username" placeholder="Be creative" autofocus />
-            <small class="form-text text-muted">Your username must be between 4 and 25 characters long</small>
-            <div class="alert alert-danger d-none mb-0 mt-2">
-                @Html.ValidationMessageFor(u => u.Username, "", new { @class = "text-danger" })
+<div class="row py-5 bg-xx-2">
 
-                @if (ViewData["Errors"] != null)
-                {
-                    @((ViewData["ErrorsList"] as Dictionary<string, string>)["Username"])
-                }
-            </div>
-        </div>
-        <div class="d-none d-md-block col-md-3"></div>
-        <div class="d-none d-md-block col-md-3"></div>
-        <div class="form-group col-12 col-md-6">
-            <label for="password" class="col-form-label">Password</label>
-            <input id="password" type="password" class="form-control" name="password" placeholder="Think strong" />
-            <small class="form-text text-muted">Your password must be at least 6 characters long and must include at least one lower case, one upper case letter and one number</small> 
-            <div class="alert alert-danger d-none mb-0 mt-2">
-                @Html.ValidationMessageFor(u => u.Password, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="d-none d-md-block col-md-3"></div>
-        <div class="d-none d-md-block col-md-3"></div>
-        <div class="form-group col-12 col-md-6">
-            <button type="submit" class="btn btn-primary form-control">Sign Up</button>
-        </div>
+    <div class="col-12 text-center mb-3">
+        <h1 class="display-4 text-white">Sign up</h1>
     </div>
-</form>
 
-@section Scripts
-{
-    <script src="~/js/ErrorLoading.js"></script>
-}
+    <div class="d-none d-lg-block col-lg-4"></div>
+
+    <div class="col-12 col-lg-4 text-white text-center">
+        <form asp-controller="Account" asp-action="New" method="POST">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group mb-2">
+                <label for="username" class="sr-only">Username</label>
+                <input id="username" type="text" class="form-control form-control-lg border-sharp" name="username" placeholder="Pick a username" autofocus />
+                <small class="form-help-intro text-xx-9">Pick a username that is 4-25 characters long</small>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="sr-only">Password</label>
+                <input id="password" type="password" class="form-control form-control-lg border-sharp" name="password" placeholder="Strong password" />
+                <small class="form-help-intro text-xx-9">Pick a strong password that contains at least 6 characters (lower case, upper case and numerical)</small>
+            </div>
+
+            <button type="submit" class="btn-lg form-control border-sharp bg-xx-5 text-white">Sign up</button>
+        </form>
+    </div>
+
+</div>

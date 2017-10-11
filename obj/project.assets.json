@@ -13221,16 +13221,16 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.1.0",
+    "version": "1.0.0",
     "restoreSettings": {
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Projects\\ASP.NET\\ShopTracker\\Shop-Tracker\\ShopTracker.csproj",
+      "projectUniqueName": "E:\\Projects\\GitHub\\ShopTracker\\ShopTracker.csproj",
       "projectName": "ShopTracker",
-      "projectPath": "E:\\Projects\\ASP.NET\\ShopTracker\\Shop-Tracker\\ShopTracker.csproj",
+      "projectPath": "E:\\Projects\\GitHub\\ShopTracker\\ShopTracker.csproj",
       "packagesPath": "C:\\Users\\herro\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\ASP.NET\\ShopTracker\\Shop-Tracker\\obj\\",
+      "outputPath": "E:\\Projects\\GitHub\\ShopTracker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

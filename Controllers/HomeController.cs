@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Session;
-using Shop_Tracker.Models;
+using ShopTracker.Models;
 using Microsoft.AspNetCore.Http;
 using ShopTracker.MessageDistribute;
 using static ShopTracker.Security.Authentication;

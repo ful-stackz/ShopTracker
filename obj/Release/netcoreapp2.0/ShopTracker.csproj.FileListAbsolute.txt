@@ -1,0 +1,11 @@
+E:\Projects\GitHub\ShopTracker\bin\Release\netcoreapp2.0\ShopTracker.deps.json
+E:\Projects\GitHub\ShopTracker\bin\Release\netcoreapp2.0\ShopTracker.runtimeconfig.json
+E:\Projects\GitHub\ShopTracker\bin\Release\netcoreapp2.0\ShopTracker.runtimeconfig.dev.json
+E:\Projects\GitHub\ShopTracker\bin\Release\netcoreapp2.0\ShopTracker.dll
+E:\Projects\GitHub\ShopTracker\bin\Release\netcoreapp2.0\ShopTracker.pdb
+E:\Projects\GitHub\ShopTracker\obj\Release\netcoreapp2.0\ShopTracker.csprojResolveAssemblyReference.cache
+E:\Projects\GitHub\ShopTracker\obj\Release\netcoreapp2.0\ShopTracker.csproj.CoreCompileInputs.cache
+E:\Projects\GitHub\ShopTracker\obj\Release\netcoreapp2.0\ShopTracker.AssemblyInfoInputs.cache
+E:\Projects\GitHub\ShopTracker\obj\Release\netcoreapp2.0\ShopTracker.AssemblyInfo.cs
+E:\Projects\GitHub\ShopTracker\obj\Release\netcoreapp2.0\ShopTracker.dll
+E:\Projects\GitHub\ShopTracker\obj\Release\netcoreapp2.0\ShopTracker.pdb

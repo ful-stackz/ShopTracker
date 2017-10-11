@@ -20,3 +20,14 @@ E:\Projects\ASP.NET\Shop-TrackerDEV\Shop-Tracker\obj\Debug\netcoreapp2.0\ShopTra
 E:\Projects\ASP.NET\Shop-TrackerDEV\Shop-Tracker\obj\Debug\netcoreapp2.0\ShopTracker.AssemblyInfo.cs
 E:\Projects\ASP.NET\Shop-TrackerDEV\Shop-Tracker\obj\Debug\netcoreapp2.0\ShopTracker.dll
 E:\Projects\ASP.NET\Shop-TrackerDEV\Shop-Tracker\obj\Debug\netcoreapp2.0\ShopTracker.pdb
+E:\Projects\GitHub\ShopTracker\bin\Debug\netcoreapp2.0\ShopTracker.deps.json
+E:\Projects\GitHub\ShopTracker\bin\Debug\netcoreapp2.0\ShopTracker.runtimeconfig.json
+E:\Projects\GitHub\ShopTracker\bin\Debug\netcoreapp2.0\ShopTracker.runtimeconfig.dev.json
+E:\Projects\GitHub\ShopTracker\bin\Debug\netcoreapp2.0\ShopTracker.dll
+E:\Projects\GitHub\ShopTracker\bin\Debug\netcoreapp2.0\ShopTracker.pdb
+E:\Projects\GitHub\ShopTracker\obj\Debug\netcoreapp2.0\ShopTracker.csprojResolveAssemblyReference.cache
+E:\Projects\GitHub\ShopTracker\obj\Debug\netcoreapp2.0\ShopTracker.csproj.CoreCompileInputs.cache
+E:\Projects\GitHub\ShopTracker\obj\Debug\netcoreapp2.0\ShopTracker.AssemblyInfoInputs.cache
+E:\Projects\GitHub\ShopTracker\obj\Debug\netcoreapp2.0\ShopTracker.AssemblyInfo.cs
+E:\Projects\GitHub\ShopTracker\obj\Debug\netcoreapp2.0\ShopTracker.dll
+E:\Projects\GitHub\ShopTracker\obj\Debug\netcoreapp2.0\ShopTracker.pdb

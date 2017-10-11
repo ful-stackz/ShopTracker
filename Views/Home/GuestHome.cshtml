@@ -1,43 +1,125 @@
-﻿@{ 
+﻿@{
     ViewData["Title"] = "Home";
 }
 
-<br />
+<div class="row bg-xx-1 py-5 px-2">
 
-<div class="row bg-light">
-    <div class="col-12 col-md-6 pb-3">
-        <h1>Login<br /><small class="text-small text-muted">Already a member? Welcome back!</small></h1>
-        <form asp-controller="Account" asp-action="Login" method="POST">
-            @Html.AntiForgeryToken()
-
-            <div class="form-group">
-                <label for="username" class="col-form-label">Username</label>
-                <input id="username" type="text" class="form-control" name="username" placeholder="Username..." autofocus />
-            </div>
-            <div class="form-group">
-                <label for="password" class="col-form-label">Password</label>
-                <input id="password" type="password" class="form-control" name="password" placeholder="Password..." />
-            </div>
-
-            <button type="submit" class="btn btn-primary form-control">Login</button>
-        </form>
+    <div class="col-12 col-lg-4 text-center">
+        <img src="~/images/look-up.png" class="img-intro" />
+        <h3 class="h-intro text-white mt-2">Track</h3>
+        <hr class="hr-intro bg-xx-6" />
+        <p class="lead p-intro text-xx-6">
+            Keep track of everything that makes Your hard earned stash get thinner. With ShopTracker you can record every individual
+            purchase You make. To make the <i>Review</i> process even more rewarding You can specify where you bought it from and what
+            was the currency of the payment, making vacation expense tracking piece of cake.
+        </p>
     </div>
 
-    <div class="col-12 col-md-6 pb-3">
-        <h1>Sign up<br /><small class="text-small text-muted">Become a member right away!</small></h1>
+    <div class="col-12 col-lg-4 text-center">
+        <img src="~/images/calculator.png" class="img-intro" />
+        <h3 class="h-intro text-white mt-2">Review</h3>
+        <hr class="bg-xx-6" />
+        <p class="lead p-intro text-xx-6">
+            ShopTracker allows You not only to review all the purchases You have ever made, but also make these plain text records mean something.
+            Check out what You bought today, this week, month or year; search that particular thing; see what was the most expensive addition to
+            your life. All of that and more will help You organize Your budget and <i>Save</i> what can be saved.
+        </p>
+    </div>
+
+    <div class="col-12 col-lg-4 text-center">
+        <img src="~/images/piggy-bank.png" class="img-intro" />
+        <h3 class="h-intro text-white mt-2">Save</h3>
+        <hr class="bg-xx-6" />
+        <p class="lead p-intro text-xx-6">
+            Knowledge is power. And the more precise knowledge the more power to save some extra cash. With a little bit of help from
+            ShopTracker You can <i>Track</i> and <i>Review</i> every single expense in Your daily life, allowing you to draw conclusions and
+            take decisions.
+        </p>
+    </div>
+
+</div>
+
+<div class="row bg-xx-5 py-5">
+
+    <div class="col-12 text-white text-center mb-4">
+        <h1 class="display-3">Join now and start tracking!</h1>
+    </div>
+
+    <div class="d-none d-lg-block col-lg-4"></div>
+
+    <div class="col-12 col-lg-4 text-white text-center">
         <form asp-controller="Account" asp-action="New" method="POST">
             @Html.AntiForgeryToken()
 
-            <div class="form-group">
-                <label for="username" class="col-form-label">Username</label>
-                <input id="username" type="text" class="form-control" name="username" placeholder="Username..." autofocus />
-            </div>
-            <div class="form-group">
-                <label for="password" class="col-form-label">Password</label>
-                <input id="password" type="password" class="form-control" name="password" placeholder="Password..." />
+            <div class="form-group mb-2">
+                <label for="username" class="sr-only">Username</label>
+                <input id="username" type="text" class="form-control form-control-lg border-sharp" name="username" placeholder="Pick a username" autofocus />
+                <small class="form-help-intro">Pick a username that is 4-25 characters long</small>
             </div>
 
-            <button type="submit" class="btn btn-primary form-control">Sign up</button>
+            <div class="form-group">
+                <label for="password" class="sr-only">Password</label>
+                <input id="password" type="password" class="form-control form-control-lg border-sharp" name="password" placeholder="Strong password" />
+                <small class="form-help-intro">Pick a strong password that contains at least 6 lower, upper case characters and numbers</small>
+            </div>
+
+            <button type="submit" class="btn-lg form-control border-sharp bg-xx-8 text-white">Sign up</button>
         </form>
     </div>
+
+</div>
+
+<div class="row bg-xx-2 py-5">
+
+    <div class="col-12 text-white text-center mb-4">
+        <blockquote class="blockquote">
+            <p class="mb-0">Still not convinced. What do I use this for? What else you got?</p>
+            <footer class="blockquote-footer text-xx-9">Most people</footer>
+        </blockquote>
+    </div>
+
+    <div class="col-12 col-lg-6 text-center mb-2">
+        <img src="~/images/cloud.png" class="img-intro" />
+        <h3 class="h-intro text-white mt-2">ShopTracker is mobile</h3>
+        <hr class="bg-xx-9" />
+        <p class="lead p-intro text-xx-9">
+            Keep track of everything that makes Your hard earned stash get thinner. With ShopTracker you can record every individual
+            purchase You make. To make the <i>Review</i> process even more rewarding You can specify where you bought it from and what
+            was the currency of the payment, making vacation expense tracking piece of cake.
+        </p>
+    </div>
+
+    <div class="col-12 col-lg-6 text-center mb-2">
+        <img src="~/images/receipt.png" class="img-intro" />
+        <h3 class="h-intro text-white mt-2">ShopTracker is eco</h3>
+        <hr class="bg-xx-9" />
+        <p class="lead p-intro text-xx-9">
+            Keep track of everything that makes Your hard earned stash get thinner. With ShopTracker you can record every individual
+            purchase You make. To make the <i>Review</i> process even more rewarding You can specify where you bought it from and what
+            was the currency of the payment, making vacation expense tracking piece of cake.
+        </p>
+    </div>
+
+    <div class="col-12 col-lg-6 text-center mb-2">
+        <img src="~/images/vault.png" class="img-intro" />
+        <h3 class="h-intro text-white mt-2">ShopTracker is a keeper</h3>
+        <hr class="bg-xx-9" />
+        <p class="lead p-intro text-xx-9">
+            Keep track of everything that makes Your hard earned stash get thinner. With ShopTracker you can record every individual
+            purchase You make. To make the <i>Review</i> process even more rewarding You can specify where you bought it from and what
+            was the currency of the payment, making vacation expense tracking piece of cake.
+        </p>
+    </div>
+
+    <div class="col-12 col-lg-6 text-center mb-2">
+        <img src="~/images/filter.png" class="img-intro" />
+        <h3 class="h-intro text-white mt-2">ShopTracker is functional</h3>
+        <hr class="bg-xx-9" />
+        <p class="lead p-intro text-xx-9">
+            Keep track of everything that makes Your hard earned stash get thinner. With ShopTracker you can record every individual
+            purchase You make. To make the <i>Review</i> process even more rewarding You can specify where you bought it from and what
+            was the currency of the payment, making vacation expense tracking piece of cake.
+        </p>
+    </div>
+
 </div>

@@ -2,40 +2,97 @@
 @{
     ViewData["Title"] = "Index";
 }
-<div class="jumbotron">
-    <h1 class="display-4">All my purchases</h1>
-    <p class="lead">Review all your purchases</p>
+
+<div class="row bg-xx-1 py-2">
+    <div class="col-12 text-center">
+        <h1 class="h-intro text-xx-6">Review purchases</h1>
+    </div>
 </div>
 
-<br />
+<div class="row bg-xx-7 py-3 text-center">
 
-@* Search for item *@
-<div class="row">
-
-    @* SEARCH *@
-    <div class="col-12 col-md-3 mb-2">
-        <div class="form-group">
-            <label class="form-control-label">Search by name</label>
-            <input type="text" id="itemSearch" class="form-control" placeholder="Search item" />
-        </div>
-
+    <div class="col-12">
+        <p class="h-intro lead text-xx-5 mb-0">
+            Do you need help? Click right here!
+            <a class="text-white pointer" style="vertical-align: middle;" data-toggle="collapse" data-target=".helpRow" aria-expanded="true">
+                <i class="material-icons">arrow_drop_down</i>
+            </a>
+        </p>
     </div>
-    
-    @* FILTERS *@
-    <div class="col-12 col-md-3 mb-2">
-        <div class="form-group">
-            <label class="form-control-label">Filter by group</label>
-            <select id="group" name="group" class="custom-select form-control filter"></select>
-        </div>
 
+    <div class="col-12 collapse mb-3 helpRow">
+        <img src="~/images/question.png" />
+        <h3 class="h-intro text-white">What can I do here?</h3>
+        <hr class="bg-xx-5" />
+        <p class="p-intro lead text-xx-5">
+            This is your private purchases page. Here you can find all the purchases you have recorded. Better yet, you can search,
+            filter and sort them. You can also choose what kind of information to see about your purchases, hiding what is unnecessary.
+        </p>
     </div>
-    <div class="col-12 col-md-3 mb-2">
-        <label class="form-control-label">Filter by category</label>
+
+    <div class="col-12 collapse mb-3 helpRow">
+        <img src="~/images/search.png" />
+        <h3 class="h-intro text-white">Search by item name</h3>
+        <hr class="bg-xx-5" />
+        <p class="p-intro lead text-xx-5">
+            If you need to find "that" particular item's information (how much did I bought, how much did I paid, etc.) you can click
+            on the textbox named "Search by item" and start typing the item's name. If you did purchase such a thing then it will show up,
+            otherwise you either forgot or succeeded in saving some cash!
+        </p>
+    </div>
+
+    <div class="col-12 collapse mb-3 helpRow">
+        <img src="~/images/flag.png" />
+        <h3 class="h-intro text-white">Filtering</h3>
+        <hr class="bg-xx-5" />
+        <p class="p-intro lead text-xx-5">
+            <span class="text-white"><b>Filter by group</b></span><br />
+            Do you want to see all the purchases you put in you "Groceries" group or maybe all the purchases you made on your "Vacation"?
+            You can do that by filtering by group! Choose the group you are looking for from the "Filter by group" dropdown list.<br /><br />
+            <span class="text-white"><b>Filter by category</b></span><br />
+            Do you want to see just the "Vegetables" you bought or maybe all the "Household fees"? You can do that by filtering by category!
+            Choose the category you are looking for from the "Filter by category" dropdown list.<br /><br />
+            <span class="text-white"><b>Filter by date</b></span><br />
+            Do you want to see what you bought just today? Or all the purchases during the last week? Month? Year? You got it!
+            Choose the time span you are looking for from the "Filter by date" dropdown list.
+        </p>
+    </div>
+
+    <div class="col-12 collapse mb-3 helpRow">
+        <img src="~/images/filter.png" />
+        <h3 class="h-intro text-white">Order and sort</h3>
+        <hr class="bg-xx-5" />
+        <p class="p-intro lead text-xx-5">
+            Maybe you want to see your most recent purchase first, maybe you want to see your oldest purchase first? Maybe you need to know
+            what was the biggest purchase in terms of quantity, maybe you want the tiniest? Maybe you want to check what took you most cash,
+            maybe you want to check the cheapest thing you bought? ShopTracker doesn't know so you can do all three! Select the property
+            you want to order by from the "Order by" dropdown list then choose whether you want them in ascending or descending order from
+            the "Sort" dropdown list.
+        </p>
+    </div>
+
+</div>
+
+<div class="row bg-xx-5 py-5">
+
+    <div class="col-12 col-lg-3 mb-2">
+        <label class="form-control-label  text-white">Search by name</label>
+        <input type="text" id="itemSearch" class="form-control" placeholder="Search item" />
+    </div>
+
+    <div class="col-12 col-lg-3 mb-2">
+        <label class="form-control-label  text-white">Filter by group</label>
+        <select id="group" name="group" class="custom-select form-control filter"></select>
+    </div>
+
+    <div class="col-12 col-lg-3 mb-2">
+        <label class="form-control-label  text-white">Filter by category</label>
         <select id="category" name="category" class="custom-select form-control filter"></select>
     </div>
-    <div class="col-6 col-md-3 mb-2">
+
+    <div class="col-12 col-lg-3 mb-2">
         <div class="form-group">
-            <label class="form-control-label">Filter by date</label>
+            <label class="form-control-label  text-white">Filter by date</label>
             <select id="timeSpan" name="timeSpan" class="custom-select form-control filter">
                 <option value="0">All-time</option>
                 <option value="1">Today</option>
@@ -46,10 +103,9 @@
         </div>
     </div>
 
-    @* SORT *@
-    <div class="col-3 col-md-3 mb-2">
+    <div class="col-6 mb-2">
         <div class="form-group">
-            <label class="form-control-label">Order by</label>
+            <label class="form-control-label  text-white">Order by</label>
             <select id="orderby" name="orderby" class="custom-select form-control sort">
                 <option value="0" selected>Date</option>
                 <option value="1">Quantity</option>
@@ -57,9 +113,10 @@
             </select>
         </div>
     </div>
-    <div class="col-3 col-md-3 mb-2">
+
+    <div class="col-6 mb-2">
         <div class="form-group">
-            <label class="form-control-label">Sort</label>
+            <label class="form-control-label text-white">Sort</label>
             <select id="sortby" name="sortby" class="custom-select form-control sort">
                 <option value="0">Ascending</option>
                 <option value="1" selected>Descending</option>
@@ -67,60 +124,66 @@
         </div>
     </div>
 
-    @* MODULAR VIEW *@
-    <div class="col-3 col-md-6 mb-2">
+    @*<div class="col-3 col-md-6 mb-2">
         <div class="form-group">
-            <label class="form-control-label">Show</label><br />
+            <label class="form-control-label text-white">Show</label><br />
             <div class="form-check form-check-inline">
-                <label class="form-check-label">
+                <label class="form-check-label text-white">
                     <input class="form-check-input" type="checkbox" id="nameCb" control="data-name" checked> Name
                 </label>
             </div>
             <div class="form-check form-check-inline">
-                <label class="form-check-label">
+                <label class="form-check-label text-white">
                     <input class="form-check-input" type="checkbox" id="quantityCb" control="data-quantity" checked> Quantity
                 </label>
             </div>
             <div class="form-check form-check-inline">
-                <label class="form-check-label">
+                <label class="form-check-label  text-white">
                     <input class="form-check-input" type="checkbox" id="priceCb" control="data-price" checked> Price
                 </label>
             </div>
             <div class="form-check form-check-inline">
-                <label class="form-check-label">
+                <label class="form-check-label  text-white">
                     <input class="form-check-input" type="checkbox" id="dateCb" control="data-date" checked> Date
                 </label>
             </div>
             <div class="form-check form-check-inline">
-                <label class="form-check-label">
+                <label class="form-check-label  text-white">
                     <input class="form-check-input" type="checkbox" id="providerCb" control="data-provider" checked> Provider
                 </label>
             </div>
             <div class="form-check form-check-inline">
-                <label class="form-check-label">
+                <label class="form-check-label  text-white">
                     <input class="form-check-input" type="checkbox" id="actionsCb" control="data-actions" checked> Actions
                 </label>
             </div>
         </div>
-    </div>
+    </div>*@
+
 </div>
 
-@Html.AntiForgeryToken()
-<input type="text" id="userId" value="@ViewData["UserID"]" hidden />
+<div class="d-none">
+    @Html.AntiForgeryToken()
+    <input type="text" id="userId" value="@ViewData["UserID"]" hidden />
+</div>
 
-<table class="table d-none" id="itemsTable">
-    <thead>
-        <tr>
-            <th class="data-name">Name</th>
-            <th class="data-quantity">Quantity</th>
-            <th class="data-price">Price</th>
-            <th class="data-date">Date</th>
-            <th class="data-provider">Provider</th>
-            <th class="data-actions">Actions</th>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
+<div class="row d-none" id="itemsContainer">
+
+    <table class="table table-responsive mb-0 d-none" id="itemsTable">
+        @*<thead>
+            <tr>
+                <th class="data-name">Name</th>
+                <th class="data-quantity">Quantity</th>
+                <th class="data-price">Price</th>
+                <th class="data-date">Date</th>
+                <th class="data-provider">Provider</th>
+                <th class="data-actions">Actions</th>
+            </tr>
+        </thead>*@
+        <tbody></tbody>
+    </table>
+
+</div>
 
 @section Scripts {
     <script src="~/js/PurchasesIndex.js"></script>

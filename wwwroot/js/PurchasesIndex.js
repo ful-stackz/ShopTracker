@@ -13,7 +13,7 @@ var opts = {
   , radius: 45 // The radius of the inner circle
   , scale: 1.00 // Scales overall size of the spinner
   , corners: 1 // Corner roundness (0..1)
-  , color: '#000' // #rgb or #rrggbb or array of colors
+  , color: '#67221b' // #rgb or #rrggbb or array of colors
   , opacity: 0 // Opacity of the lines
   , rotate: 2 // The rotation offset
   , direction: 1 // 1: clockwise, -1: counterclockwise
@@ -54,7 +54,7 @@ $(window).on('load', function() {
         .then(ShowSearchCategories)
         .then(FixPurchasesDate)
         .then(SortPurchases)
-        .then(ShowPurchases)).then(function() { spinner.stop(); this.resolve(); });
+        .then(ShowPurchases)).then(function() { spinner.stop(); });
 });
 
 $('#itemSearch').on('keyup', function(elem) {
@@ -385,6 +385,7 @@ var ShowPurchases = function() {
 
         if (visP.length == 0) {
 
+            $('#itemsContainer').addClass('d-none');
             $('#itemsTable').addClass('d-none');
 
             this.resolve();
@@ -405,27 +406,70 @@ var ShowPurchases = function() {
 
         for (var i = 0; i < visP.length; i++) {
 
-            tBody.append($('<tr>')
-                .append($('<td>').attr('class', 'data-name')
-                    .html(visP[i].item.name)
-                    .append($('<span>').attr('class', 'text-muted ml-1').html(visP[i].item.category.name)))
-                .append($('<td>').attr('class', 'data-quantity')
-                    .html(visP[i].quantity)
-                    .append($('<span>').attr('class', 'text-muted ml-1').html(visP[i].item.measure.name)))
-                .append($('<td>').attr('class', 'data-price')
-                    .html(visP[i].price)
-                    .append($('<span>').attr('class', 'text-muted ml-1').html(visP[i].currency.name)))
-                .append($('<td>').attr('class', 'data-date')
-                    .html(visP[i].date))
-                .append($('<td>').attr('class', 'data-provider')
-                    .html(visP[i].provider))
-                .append($('<td>').attr('class', 'data-actions')
-                    .append($('<a>').attr('href', '/purchase/edit/' + visP[i].purchaseID).html('Edit '))
-                    .append($('<a>').attr('href', '/purchase/delete/' + visP[i].purchaseID).attr('class', 'text-danger').html('Delete'))
-            ));
+            // tBody.append($('<tr>')
+            //     .append($('<td>').attr('class', 'data-name')
+            //         .html(visP[i].item.name)
+            //         .append($('<span>').attr('class', 'text-muted ml-1').html(visP[i].item.category.name)))
+            //     .append($('<td>').attr('class', 'data-quantity')
+            //         .html(visP[i].quantity)
+            //         .append($('<span>').attr('class', 'text-muted ml-1').html(visP[i].item.measure.name)))
+            //     .append($('<td>').attr('class', 'data-price')
+            //         .html(visP[i].price)
+            //         .append($('<span>').attr('class', 'text-muted ml-1').html(visP[i].currency.name)))
+            //     .append($('<td>').attr('class', 'data-date')
+            //         .html(visP[i].date))
+            //     .append($('<td>').attr('class', 'data-provider')
+            //         .html(visP[i].provider))
+            //     .append($('<td>').attr('class', 'data-actions')
+            //         .append($('<a>').attr('href', '/purchase/edit/' + visP[i].purchaseID).html('Edit '))
+            //         .append($('<a>').attr('href', '/purchase/delete/' + visP[i].purchaseID).attr('class', 'text-danger').html('Delete'))
+            // ));
 
+            let tableRow = $('<tr>').attr('class', 'bg-xx-4');
+
+            let colColor = $('<td>').attr('class', 'td-color');
+
+            let colNameDesc = $('<td>').attr('class', 'td-name-desc data-name')
+                .append(visP[i].item.name)
+                .append('<br>')
+                .append($('<small>').attr('class', 'text-muted').html(visP[i].item.description));
+
+            let colCatPrvd = $('<td>').attr('class', 'td-cat-prvd')
+                .append($('<div>').attr('class', 'td-border'))
+                .append(visP[i].item.category.name)
+                .append('<br>')
+                .append($('<small>').attr('class', 'text-muted').html(visP[i].provider));
+
+            let colQtyMsr = $('<td>').attr('class', 'td-qty-msr')
+                .append($('<div>').attr('class', 'td-border'))
+                .append(visP[i].quantity)
+                .append('<br>')
+                .append($('<small>').attr('class', 'text-muted').html(visP[i].item.measure.name));
+
+            let colPrcCur = $('<td>').attr('class', 'td-prc-cur')
+                .append($('<div>').attr('class', 'td-border'))
+                .append(visP[i].price)
+                .append('<br>')
+                .append($('<small>').attr('class', 'text-muted').html(visP[i].currency.fullName));
+
+            let colDate = $('<td>').attr('class', 'td-date')
+                .append($('<div>').attr('class', 'td-border'))
+                .append(visP[i].date.substring(0, 5))
+                .append('<br>')
+                .append($('<small>').attr('class', 'text-muted').html(visP[i].date.substring(6, 10)));
+
+            let colAction = $('<td>').attr('class', 'td-actions bg-xx-2 align-middle')
+                .append($('<a>').attr('href', '/purchase/edit/' + visP[i].purchaseID).append($('<i>').attr('class', 'material-icons').html('edit')))
+                .append(' ')
+                .append($('<a>').attr('href', '/purchase/delete/' + visP[i].purchaseID).append($('<i>').attr('class', 'material-icons text-xx-9').html('delete')));
+            
+            tableRow.append(colColor).append(colNameDesc).append(colCatPrvd).append(colQtyMsr).append(colPrcCur).append(colDate).append(colAction);
+
+            tBody.append(tableRow);
+            
         }
 
+        $('#itemsContainer').removeClass('d-none');
         $('#itemsTable').removeClass('d-none');
 
         this.resolve();

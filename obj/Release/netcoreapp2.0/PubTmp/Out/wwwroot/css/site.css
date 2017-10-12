@@ -12,6 +12,10 @@
     border-radius: 0;
 }
 
+.pointer {
+    cursor: pointer !important;
+}
+
 /* Text Utilities */
 .h-intro {
     font-weight: 100 !important;
@@ -100,4 +104,54 @@
 
 .text-xx-9 {
     color: #67221b !important;
+}
+
+/* Items Table */
+.td-color {
+    padding: 0.75rem 0 0.75rem 0;
+    width: 1px !important;
+    background-color: #fe9496 !important;
+}
+
+.td-name-desc {
+}
+
+td .td-border {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    width: 1px;
+    height: 50px;
+    background-color: #ccc;
+    float: left;
+    margin-left: -25px;
+}
+
+.td-cat-prvd {
+    
+}
+
+.td-qty-msr {
+
+}
+
+.td-prc-cur {
+    
+}
+
+.td-date {
+    
+}
+
+.td-actions {
+    width: 80px;
+    background-color: #caedcc;
+}
+
+
+@media (max-width: 768px) {
+    .table-responsive tr td:not(:first-child) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }

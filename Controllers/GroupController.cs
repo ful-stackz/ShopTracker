@@ -43,7 +43,7 @@ namespace ShopTracker.Controllers
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public IActionResult New(string name, string password)
+        public IActionResult New(string name, int prefcurr)
         {
             // If the group exists for this user then return error
             //
@@ -69,7 +69,8 @@ namespace ShopTracker.Controllers
             Models.Group newGroup = new Models.Group()
             {
                 Name = name,
-                UserID = currUser.UserID
+                UserID = currUser.UserID,
+                PrefCurrID = prefcurr
             };
 
             // Try to validate new model

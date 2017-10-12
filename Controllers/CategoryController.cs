@@ -107,7 +107,7 @@ namespace ShopTracker.Controllers
             }
             catch
             {
-                AddErrorMessage(TempData, "An error was encountered while saving the new category to the database!");
+                AddErrorMessage(TempData, "An error was encountered while saving the new category!");
             }
 
             return RedirectToAction("Index", "Home");

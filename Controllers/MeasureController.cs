@@ -81,7 +81,7 @@ namespace ShopTracker.Controllers
             //
             if (TryValidateModel(newMeasure) == false)
             {
-                AddErrorMessage(TempData, "Make sure the category name is between 3 and 25 characters long.", "Invalid Data!");
+                AddErrorMessage(TempData, "Make sure the measure name is between 3 and 25 characters long.", "Invalid Data!");
                 return RedirectToAction("Index", "Home");
             }
 
@@ -95,7 +95,7 @@ namespace ShopTracker.Controllers
 
                 // Saved successfully
                 //
-                AddOkMessage(TempData, "You have successfully added a new category!");
+                AddOkMessage(TempData, "You have successfully added a new measure!");
             }
             catch
             {

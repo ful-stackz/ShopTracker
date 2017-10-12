@@ -71,10 +71,6 @@ namespace ShopTracker.Controllers
         public IActionResult NewPurchase(int userId, int groupId, int itemId, int currency, string quantity, string price, string date, string provider)
         {
             // Check for null input
-
-            AddInfoMessage(TempData, string.Format("userId: {0}; groupId: {1}; itemId: {2}; currency: {3}; quantity: {4}; price: {5}; date: {6}",
-                userId, groupId, itemId, currency, quantity, price, date));
-
             if (quantity == "" || price == "" || date == "")
             {
                 AddErrorMessage(TempData, "Invalid input!");

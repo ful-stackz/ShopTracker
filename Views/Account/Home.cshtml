@@ -3,6 +3,37 @@
 @{
     ViewData["Title"] = "Account Control";
 
+    int TotalPurchases(List<ShopTracker.Models.Group> _groups)
+    {
+        int purchases = 0;
+
+        foreach (var group in _groups)
+        {
+            if (group.Purchases == null) continue;
+
+            purchases += group.Purchases.Count;
+        }
+
+        return purchases;
+    }
+
+    decimal TotalExpenses(List<ShopTracker.Models.Group> _groups)
+    {
+        decimal expenses = 0;
+
+        foreach (var group in _groups)
+        {
+            if (group.Purchases == null) continue;
+
+            foreach (var purchase in group.Purchases)
+            {
+                expenses += purchase.Price;
+            }
+        }
+
+        return expenses;
+    }
+
     decimal CalculateExpenses(ShopTracker.Models.Group _group)
     {
         if (_group.Purchases == null) return 0;
@@ -16,132 +47,250 @@
 
         return total;
     }
+
 }
 
-<div class="jumbotron">
-    <h1 class="display-3">Account Control</h1>
-    <p class="lead">Here you can manage your groups, change your password and delete your account.</p>
+<div class="row bg-xx-1 py-2">
+    <div class="col-12 text-center">
+        <h1 class="h-intro text-xx-6">User panel</h1>
+    </div>
 </div>
 
-@* Account information section *@
-<div class="card">
-    <div class="card-header">
-        Account information
-    </div>
-    <div class="card-body">
-        <h4>Hello, @Model.Username</h4>
-        <p class="card-text">
-            Account type: @Model.Role.Name
-            <br />
-            You joined on @Model.DateCreated
-            <br />
-            Groups created: @Html.Raw((Model.Groups != null) ? Model.Groups.Count.ToString() : "0")
-            <br />
-            Total purchases: 243
+<div class="row bg-xx-7 py-3 text-center">
+
+    <div class="col-12">
+        <p class="h-intro lead text-xx-5 mb-0">
+            What is this page for? Show me!
+            <a class="text-white pointer" style="vertical-align: middle;" data-toggle="collapse" data-target=".helpRow" aria-expanded="false">
+                <i class="material-icons">arrow_drop_down</i>
+            </a>
         </p>
     </div>
+
+    <div class="col-12 collapse mt-3 helpRow">
+        <img src="~/images/user.png" />
+        <h3 class="h-intro text-white">This is your user panel</h3>
+        <hr class="bg-xx-5" />
+        <p class="p-intro lead text-xx-5">
+            This page is for your eyes only. Here you can see info about your account, manage your groups, change your password and delete your account.<br /><br />
+            <span class="text-white">Account info</span><br />
+            In the "Account info" section you will find info about your account (account type, date of joining, groups created, total purchases
+            and total expenses).<br /><br />
+            <span class="text-white">Groups info</span><br />
+            In the "Groups info" section you will find all your groups. You can admire them, view overall information or change them. You can also add
+            a new group from this section.<br /><br />
+            <span class="text-white">Password change</span><br />
+            In the "Password change" section you can change your password. You will need to type in your current password and your new password. Simple.<br /><br />
+            <span class="text-white">Delete account</span><br />
+            In the "Delete account" section you can delete your account, forever. Though, ShopTracker will be sad to see you leave :(
+        </p>
+    </div>
+
 </div>
 
-<br />
+@* Account info *@
 
-@* Groups section *@
-<div class="card-deck">
-    @foreach (var group in Model.Groups)
-    {
-        <div class="card bg-light border-info mb-3" group-id="@group.GroupID">
-            <div class="card-header">@group.Name</div>
-            <div class="card-body">
-                <h4 class="card-title">Expenses: @CalculateExpenses(group)</h4>
-                <p class="card-text">You have @(group.Purchases == null ? 0 : group.Purchases.Count) purchases in this group. Your preferred currency is <span class="prefcurr">@(group.PreferredCurrency == null ? "-" : group.PreferredCurrency.FullName)</span>.</p>
-            </div>
-            <div class="card-footer">
-                <a role="button" class="text-primary group-edit" group-id="@group.GroupID" style="cursor: pointer;">Edit</a>
-                <a role="button" class="text-danger group-delete" group-id="@group.GroupID" style="cursor: pointer;">Delete</a>
-            </div>
-        </div>
-    }
+<div class="row bg-xx-1 py-2">
+    <div class="col-12 text-center">
+        <h1 class="h-intro text-xx-6">
+            Account info
+            <a data-target="#accountRow" data-toggle="collapse" aria-expanded="true">
+                <i class="material-icons align-middle text-white pointer">arrow_drop_down</i>
+            </a>
+        </h1>
+    </div>
 </div>
 
-<hr class="my-0" />
+<div class="row bg-xx-7 py-3 text-left collapse" id="accountRow">
 
-<form class="form bg-light p-2 pt-3" asp-controller="Group" asp-action="New">
-    @Html.AntiForgeryToken()
+    <div class="col-12 text-left pl-4">
+        <h1 class="h-intro text-xx-5">Username: <span class="text-white">@Model.Username</span></h1>
+    </div>
 
-    <h4 class="mb-2">Create new group</h4>
+    <div class="col-12 text-left pl-4">
+        <h1 class="h-intro text-xx-5">Account type: <span class="text-white">@Model.Role.Name</span></h1>
+    </div>
 
-    <div class="form-row">
-        <div class="col-12 col-md-5">
-            <label class="sr-only" for="groupPassword">Group name</label>
-            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="groupName" name="name" placeholder="My new group's name'" />
+    <div class="col-12 text-left pl-4">
+        <h1 class="h-intro text-xx-5">Joined: <span class="text-white">@Model.DateCreated.ToShortDateString()</span></h1>
+    </div>
+
+    <div class="col-12 text-left pl-4">
+        <h1 class="h-intro text-xx-5">Purchases: <span class="text-white">@TotalPurchases(Model.Groups)</span></h1>
+    </div>
+
+    <div class="col-12 text-left pl-4">
+        <h1 class="h-intro text-xx-5">Expenses: <span class="text-white">@TotalExpenses(Model.Groups)</span></h1>
+    </div>
+
+</div>
+
+@* Groups info *@
+
+<div class="row bg-xx-1 py-2">
+    <div class="col-12 text-center">
+        <h1 class="h-intro text-xx-6">
+            Groups info
+            <a data-target="#groupsRow" data-toggle="collapse">
+                <i class="material-icons align-middle text-white pointer">arrow_drop_down</i>
+            </a>
+        </h1>
+    </div>
+</div>
+
+<div id="groupsRow" class="row bg-xx-7 py-3 text-center collapse">
+
+    <div class="col-12 mb-4">
+        <div class="card-deck">
+
+            @foreach (var group in Model.Groups)
+            {
+                <div class="card bg-xx-1 mb-2 border-sharp text-left" group-id="@group.GroupID">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <span class="text-white">@group.Name</span>
+                        </h5>
+                        <h6 class="card-subtitle mt-2 mb-3">
+                            <span class="text-xx-2">Purchases</span> <small class="text-xx-5">@(group.Purchases == null ? 0 : group.Purchases.Count)</small><br />
+                            <span class="text-xx-2">Expenses</span> <small class="text-xx-5">@CalculateExpenses(group)</small><br />
+                            <span class="text-xx-2">Currency</span> <small class="text-xx-5">@(group.PreferredCurrency == null ? "-" : group.PreferredCurrency.FullName)</small>
+                        </h6>
+                        <button class="btn bg-xx-5 text-white border-sharp group-edit" group-id="@group.GroupID">Edit</button>
+                        <button class="btn btn-danger text-white border-sharp group-delete" group-id="@group.GroupID">Delete</button>
+                    </div>
+                </div>
+            }
+
         </div>
-        <div class="col-12 col-md-5">
-            <label class="sr-only" for="groupPassword">Group password</label>
-            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="groupPassword" name="password" placeholder="Optional" />
-        </div>
-        <div class="col-12 col-md-2">
-            <button type="submit" class="btn btn-primary form-control">Create</button>
-        </div>
-        @if (TempData["Errors"] != null)
-        {
-            <div class="col-12 p-2 mb-0">
-                <div class="alert alert-danger mb-0">
-                    @((TempData["ErrorsList"] as Dictionary<string, string>).Where(e => e.Key == "Group").FirstOrDefault().Value)
-                    @((TempData["ErrorsList"] as Dictionary<string, string>).Where(e => e.Key == "GroupName").FirstOrDefault().Value)
+    </div>
+
+    <div class="col-12 bg-xx-1 py-2 text-center mb-3">
+        <h1 class="h-intro text-xx-6">
+            Create new group
+        </h1>
+    </div>
+
+    <div class="col-12 text-left">
+
+        <form class="form" asp-controller="Group" asp-action="New">
+            @Html.AntiForgeryToken()
+
+            <div class="form-row">
+
+                <div class="col-12 col-lg-6 mb-3">
+                    <label class="text-white" for="groupPassword">Name</label>
+                    <input type="text" class="form-control border-sharp" id="groupName" name="name" placeholder="Groceries" />
+                </div>
+
+                <div class="col-12 col-lg-6 mb-3">
+                    <label class="text-white" for="prefcurr">Preferred currency</label>
+                    <select class="custom-select form-control border-sharp" id="prefcurr" name="prefcurr">
+                        <option value="1">EUR (Euro)</option>
+                        <option value="2">USD (United States Dollar)</option>
+                        <option value="3">GBP (Pound Sterling)</option>
+                        <option value="4">USD (Bulgarian Lev)</option>
+                    </select>
+                </div>
+                
+                <div class="col-12">
+                    <button type="submit" class="btn bg-xx-5 border-sharp form-control">Create</button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+@* Change password *@
+
+<div class="row bg-xx-1 py-2">
+    <div class="col-12 text-center">
+        <h1 class="h-intro text-xx-6">
+            Change password
+            <a data-target="#changePassRow" data-toggle="collapse">
+                <i class="material-icons align-middle text-white pointer">arrow_drop_down</i>
+            </a>
+        </h1>
+    </div>
+</div>
+
+<div id="changePassRow" class="row bg-xx-7 py-3 text-center collapse">
+
+    <div class="col-12 py-2 text-left">
+
+        <form class="form" asp-controller="Account" asp-action="ChangePassword">
+            @Html.AntiForgeryToken()
+
+            <input type="text" name="id" value="@Model.UserID" hidden />
+
+            <div class="form-row">
+                <div class="col-12 col-lg-4 mb-2">
+                    <label class="text-white" for="oldPassword">Old password</label>
+                    <input type="password" class="form-control border-sharp" id="oldPassword" name="oldPassword" placeholder="Current password" />
+                </div>
+                <div class="col-12 col-lg-4 mb-2">
+                    <label class="text-white" for="newPassword">New password</label>
+                    <input type="password" class="form-control border-sharp" id="newPassword" name="newPassword" placeholder="New password" />
+                </div>
+                <div class="col-12 col-lg-4 mb-2">
+                    <label class="text-white" for="confirmPassword">Confirm password</label>
+                    <input type="password" class="form-control border-sharp" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password" />
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn bg-xx-5 border-sharp text-white form-control">Change</button>
                 </div>
             </div>
-        }
+        </form>
+
     </div>
-</form>
 
-<br />
+</div>
 
-@* Change password section *@
-<form class="form bg-light p-2" asp-controller="Account" asp-action="ChangePassword">
-    @Html.AntiForgeryToken()
+@* Delete account *@
 
-    <input type="text" name="id" value="@Model.UserID" hidden />
-
-    <h4>Change password</h4>
-
-    <div class="form-row">
-        <div class="col-12 col-md-4">
-            <label class="sr-only" for="oldPassword">Old password</label>
-            <input type="password" class="form-control mb-2 mr-sm-2 mb-sm-0" id="oldPassword" name="oldPassword" placeholder="Current password" />
-        </div>
-        <div class="col-12 col-md-4">
-            <label class="sr-only" for="newPassword">New password</label>
-            <input type="password" class="form-control mb-2 mr-sm-2 mb-sm-0" id="newPassword" name="newPassword" placeholder="New password" />
-        </div>
-        <div class="col-12 col-md-4 mb-2">
-            <label class="sr-only" for="confirmPassword">Confirm password</label>
-            <input type="password" class="form-control mb-2 mr-sm-2 mb-sm-0" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password" />
-        </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary form-control">Change</button>
-        </div>
+<div class="row bg-xx-2 py-2">
+    <div class="col-12 text-center">
+        <h1 class="h-intro text-xx-9">
+            Delete account
+            <a data-target="#deleteRow" data-toggle="collapse">
+                <i class="material-icons align-middle text-white pointer">arrow_drop_down</i>
+            </a>
+        </h1>
     </div>
-</form>
+</div>
 
-<br />
+<div id="deleteRow" class="row bg-xx-7 py-3 text-center collapse">
+
+    <div class="col-12 text-left py-2">
+
+        <form class="form" asp-controller="Account" asp-action="Delete">
+            @Html.AntiForgeryToken()
+
+            <input type="text" name="id" value="@Model.UserID" hidden />
+
+            <div class="form-row">
+                <div class="col-12 mb-2">
+                    <label class="text-white" for="username">Confirm that you want to delete your account</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="username" name="username" placeholder="Confirm with your username" />
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-danger form-control">Delete forever</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+
+
+
 
 @* Delete account section *@
-<form class="form bg-light p-2" asp-controller="Account" asp-action="Delete">
-    @Html.AntiForgeryToken()
 
-    <input type="text" name="id" value="@Model.UserID" hidden />
-
-    <h4 class="text-danger">Delete account</h4>
-
-    <div class="form-row">
-        <div class="col-12 col-md-6">
-            <label class="sr-only" for="username">Username</label>
-            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="username" name="username" placeholder="Confirm with your username" />
-        </div>
-        <div class="col-12 col-md-6">
-            <button type="submit" class="btn btn-danger form-control">Delete forever</button>
-        </div>
-    </div>
-</form>
 
 @section Scripts {
     <script src="~/js/UserHome.js"></script>

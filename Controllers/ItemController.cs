@@ -112,9 +112,12 @@ namespace ShopTracker.Controllers
 
             // Check if item exists
             //
-            if (DbContext.Items.Where(i => i.Name == name).FirstOrDefault() != null &&
-                DbContext.Items.Where(i => i.Category.CategoryID == category).FirstOrDefault() != null &&
-                DbContext.Items.Where(i => i.Measure.MeasureID == measure).FirstOrDefault() != null)
+            Models.Item oldItem = DbContext.Items.Where(i => i.Name == name).FirstOrDefault();
+            if (oldItem != null && 
+                oldItem.Name == name && 
+                oldItem.CategoryID == category && 
+                oldItem.MeasureID == measure && 
+                oldItem.Description == description)
             {
                 AddErrorMessage(TempData, "The item you're trying to add already exists!");
                 HasError = true;

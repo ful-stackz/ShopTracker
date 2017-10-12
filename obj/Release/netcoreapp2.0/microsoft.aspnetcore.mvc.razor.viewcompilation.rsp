@@ -7,7 +7,6 @@ E:\Projects\GitHub\ShopTracker
 --file=E:\Projects\GitHub\ShopTracker\Views\Account\Login.cshtml
 --file=E:\Projects\GitHub\ShopTracker\Views\Account\New.cshtml
 --file=E:\Projects\GitHub\ShopTracker\Views\Account\View.cshtml
---file=E:\Projects\GitHub\ShopTracker\Views\Account\_HomeGroups.cshtml
 --file=E:\Projects\GitHub\ShopTracker\Views\Category\Edit.cshtml
 --file=E:\Projects\GitHub\ShopTracker\Views\Category\Index.cshtml
 --file=E:\Projects\GitHub\ShopTracker\Views\Currency\Edit.cshtml

@@ -216,7 +216,10 @@ var LoadAllGroups = function() {
 			
 			gc.append($('<option>').attr('value', groups[i].groupID).html(groups[i].name));
 
-		}
+        }
+        
+        // DEBUG
+        console.log('Groups loaded!');
 
 	});
 
@@ -252,7 +255,10 @@ var LoadAllPurchases = function() {
 		// load the requested purchases
 		// into the global purchases array
 
-		G_PURCHASES = purchases;
+        G_PURCHASES = purchases;
+        
+        // DEBUG
+        console.log('Purchases loaded from server!');
 
 	});
 
@@ -292,6 +298,9 @@ var LoadAllCategories = function() {
             }
 
         }
+
+        // DEBUG
+        console.log('Categories loaded from global purchases!');
 
         this.resolve();
 

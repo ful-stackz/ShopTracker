@@ -13,14 +13,14 @@ $(window).on('load', function() {
 
 var LoadAllCategories = function() {
 
-    let request = $.ajax('/api/categories');
+    var request = $.ajax('/api/categories');
 
     request.done(function(allC) {
 
         // shortcut categories container
         // append all categories as options
 
-        let cc = $('#category');
+        var cc = $('#category');
         
                 for (var i = 0; i < allC.length; i++) {
         
@@ -42,14 +42,14 @@ var LoadAllCategories = function() {
 
 var LoadAllMeasures = function() {
 
-    let request = $.ajax('/api/measures');
+    var request = $.ajax('/api/measures');
 
     request.done(function(allM) {
         
         // shortcut measures container
         // append all measures as options
 
-        let mc = $('#measure');
+        var mc = $('#measure');
 
         for (var i = 0; i < allM.length; i++) {
 

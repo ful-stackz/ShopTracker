@@ -27,9 +27,10 @@ namespace ShopTracker.Controllers
         {
             // Retrieve all groups belonging to that user @id
             //
-            var groups = DbContext.Groups.Where(g => g.UserID == id).ToList();
-            DbContext.Users.Load();
-            DbContext.Purchases.Load();
+            var groups = DbContext.Groups.Where(g => g.UserID == id)
+                .Include("User")
+                .Include("Purchases")
+                .ToList();
             DbContext.Currencies.Load();
 
             // Return as JSON

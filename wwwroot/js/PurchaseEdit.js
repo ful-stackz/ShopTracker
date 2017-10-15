@@ -18,7 +18,7 @@ $(window).on('load', function() {
 // FUNCTIONS
 var LoadAllGroups = function() {
 
-    let request = $.ajax('/api/groups/' + $('#userId').val());
+    var request = $.ajax('/api/groups/' + $('#userId').val());
 
     request.done(function(groups) {
 
@@ -30,8 +30,8 @@ var LoadAllGroups = function() {
 
         G_GROUPS = groups;
 
-        let gc = $('#group');
-        let og = $('#group > option');
+        var gc = $('#group');
+        var og = $('#group > option');
 
         for (var i = 0; i < groups.length; i++) {
 
@@ -55,7 +55,7 @@ var LoadAllGroups = function() {
 
 var LoadAllCurrencies = function() {
 
-    let request = $.ajax('/api/currencies');
+    var request = $.ajax('/api/currencies');
 
     request.done(function(allC) {
 
@@ -67,8 +67,8 @@ var LoadAllCurrencies = function() {
 
         G_CURRENCIES = allC;
 
-        let cc = $('#currency');
-        let oc = $('#currency > option');
+        var cc = $('#currency');
+        var oc = $('#currency > option');
 
         for (var i = 0; i < allC.length; i++) {
 

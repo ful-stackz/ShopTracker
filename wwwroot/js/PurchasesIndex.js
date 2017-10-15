@@ -100,9 +100,9 @@ $('.filter').on('change', function() {
     // corresponding functions
     // then show purchases
 
-    let gF = $('.filter#group').val();
-    let cF = $('.filter#category').val();
-    let dF = $('.filter#timeSpan').val();
+    var gF = $('.filter#group').val();
+    var cF = $('.filter#category').val();
+    var dF = $('.filter#timeSpan').val();
 
     FilterGroup(gF)
     .then(FilterCategory(cF))
@@ -119,7 +119,7 @@ $('input[type="checkbox"]').on('change', function(elem) {
     // of the one that was clicked
     // then toggle columns
     
-    let allS = SELECTORS;
+    var allS = SELECTORS;
 
     for (var i = 0; i < allS.length; i++) {
 
@@ -144,9 +144,9 @@ var ApplyAllFilters = function() {
 	return $.Deferred(function() {
 
 		// get filter values
-		let gf = $(".filter#group").val();		// group filter
-		let cf = $(".filter#category").val();	// category filter
-		let df = $(".filter#timeSpan").val();	// date filter
+		var gf = $(".filter#group").val();		// group filter
+		var cf = $(".filter#category").val();	// category filter
+		var df = $(".filter#timeSpan").val();	// date filter
 
 		// apply filters
 		FilterGroup(gf, false)
@@ -167,14 +167,14 @@ var SearchPurchases = function(searchT) {
 		// splice the elements that don't fit
 		// the search term @searchT
 
-		let vp = V_PURCHASES;
+		var vp = V_PURCHASES;
 
 		for (var i = vp.length - 1; i >= 0; i--) {
 
 			// get current element item name
 			// compare lower case of item name and search term
 
-			let iname = vp[i].item.name.toLowerCase();
+			var iname = vp[i].item.name.toLowerCase();
 			searchT = searchT.toLowerCase();
 
 			if (iname.includes(searchT) == false) {
@@ -195,7 +195,7 @@ var SearchPurchases = function(searchT) {
 
 var LoadAllGroups = function() {
 
-	let request = $.ajax("/api/groups/" + $("#userId").val());
+	var request = $.ajax("/api/groups/" + $("#userId").val());
 
 	request.done(function(groups) {
 
@@ -204,7 +204,7 @@ var LoadAllGroups = function() {
 		// add 'all' option
 		// and fill it with the groups retrieved
 
-		let gc = $("#group");
+		var gc = $("#group");
 
 		gc.html("");
 
@@ -216,7 +216,10 @@ var LoadAllGroups = function() {
 			
 			gc.append($('<option>').attr('value', groups[i].groupID).html(groups[i].name));
 
-		}
+        }
+        
+        // DEBUG
+        console.log('Groups loaded!');
 
 	});
 
@@ -237,12 +240,12 @@ var LoadAllPurchases = function() {
 	// collect the data necessary for the ajax request
 	// get userId and the verification token
 
-	let rdata = {
+	var rdata = {
 		id: $('#userId').val(),
 		__RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
 	}
 
-	let request = $.ajax('/api/purchases/user', {
+	var request = $.ajax('/api/purchases/user', {
 		type: 'POST',
 		data: rdata
 	});
@@ -252,7 +255,10 @@ var LoadAllPurchases = function() {
 		// load the requested purchases
 		// into the global purchases array
 
-		G_PURCHASES = purchases;
+        G_PURCHASES = purchases;
+        
+        // DEBUG
+        console.log('Purchases loaded from server!');
 
 	});
 
@@ -270,10 +276,10 @@ var LoadAllPurchases = function() {
 
 var LoadAllCategories = function() {
 
-	let func = $.Deferred(function() {
+	var func = $.Deferred(function() {
 
-        let allP = G_PURCHASES;
-        let allC = G_CATEGORIES;
+        var allP = G_PURCHASES;
+        var allC = G_CATEGORIES;
 
 
         for (var i = 0; i < allP.length; i++) {
@@ -293,6 +299,9 @@ var LoadAllCategories = function() {
 
         }
 
+        // DEBUG
+        console.log('Categories loaded from global purchases!');
+
         this.resolve();
 
     });
@@ -303,15 +312,15 @@ var LoadAllCategories = function() {
 
 var LoadSearchCategories = function() {
 
-    let func = $.Deferred(function() {
+    var func = $.Deferred(function() {
 
         // shortcut global variables
         // loop through visible purchases
         // if their category is not visible
         // add it to visibles
 
-        let visP = V_PURCHASES;
-        let visC = V_CATEGORIES;
+        var visP = V_PURCHASES;
+        var visC = V_CATEGORIES;
 
         visC.splice(1);
 
@@ -343,18 +352,18 @@ var LoadSearchCategories = function() {
 
 var LoadSelectors = function() {
 
-    let func = $.Deferred(function() {
+    var func = $.Deferred(function() {
 
         // get all checkbox elements from html
         // turn them into objects
         // and add the to the global array
 
-        let gloS = SELECTORS;
-        let allS = $('input[type="checkbox"]');
+        var gloS = SELECTORS;
+        var allS = $('input[type="checkbox"]');
         
         for (var i = 0; i < allS.length; i++) {
 
-            let newS = {
+            var newS = {
                 'id': allS[i].id,
                 'checked': allS[i].checked,
                 'data': allS[i].getAttribute('control')
@@ -374,14 +383,14 @@ var LoadSelectors = function() {
 
 var ShowPurchases = function() {
 
-    let func = $.Deferred(function() {
+    var func = $.Deferred(function() {
 
         // shortcut the visible purchases
         // check if there are any
         // if there aren't
         // hide the table and quit
 
-        let visP = V_PURCHASES;
+        var visP = V_PURCHASES;
 
         if (visP.length == 0) {
 
@@ -400,7 +409,7 @@ var ShowPurchases = function() {
         // loop through the purchases
         // and append them as rows of data
 
-        let tBody = $('#itemsTable > tbody');
+        var tBody = $('#itemsTable > tbody');
 
         tBody.html('');
 
@@ -425,40 +434,40 @@ var ShowPurchases = function() {
             //         .append($('<a>').attr('href', '/purchase/delete/' + visP[i].purchaseID).attr('class', 'text-danger').html('Delete'))
             // ));
 
-            let tableRow = $('<tr>').attr('class', 'bg-xx-4');
+            var tableRow = $('<tr>').attr('class', 'bg-xx-4');
 
-            let colColor = $('<td>').attr('class', 'td-color');
+            var colColor = $('<td>').attr('class', 'td-color');
 
-            let colNameDesc = $('<td>').attr('class', 'td-name-desc data-name')
+            var colNameDesc = $('<td>').attr('class', 'td-name-desc data-name')
                 .append(visP[i].item.name)
                 .append('<br>')
                 .append($('<small>').attr('class', 'text-muted').html(visP[i].item.description));
 
-            let colCatPrvd = $('<td>').attr('class', 'td-cat-prvd')
+            var colCatPrvd = $('<td>').attr('class', 'td-cat-prvd')
                 .append($('<div>').attr('class', 'td-border'))
                 .append(visP[i].item.category.name)
                 .append('<br>')
                 .append($('<small>').attr('class', 'text-muted').html(visP[i].provider));
 
-            let colQtyMsr = $('<td>').attr('class', 'td-qty-msr')
+            var colQtyMsr = $('<td>').attr('class', 'td-qty-msr')
                 .append($('<div>').attr('class', 'td-border'))
                 .append(visP[i].quantity)
                 .append('<br>')
                 .append($('<small>').attr('class', 'text-muted').html(visP[i].item.measure.name));
 
-            let colPrcCur = $('<td>').attr('class', 'td-prc-cur')
+            var colPrcCur = $('<td>').attr('class', 'td-prc-cur')
                 .append($('<div>').attr('class', 'td-border'))
                 .append(visP[i].price)
                 .append('<br>')
                 .append($('<small>').attr('class', 'text-muted').html(visP[i].currency.fullName));
 
-            let colDate = $('<td>').attr('class', 'td-date')
+            var colDate = $('<td>').attr('class', 'td-date')
                 .append($('<div>').attr('class', 'td-border'))
                 .append(visP[i].date.substring(0, 5))
                 .append('<br>')
                 .append($('<small>').attr('class', 'text-muted').html(visP[i].date.substring(6, 10)));
 
-            let colAction = $('<td>').attr('class', 'td-actions bg-xx-2 align-middle')
+            var colAction = $('<td>').attr('class', 'td-actions bg-xx-2 align-middle')
                 .append($('<a>').attr('href', '/purchase/edit/' + visP[i].purchaseID).append($('<i>').attr('class', 'material-icons').html('edit')))
                 .append(' ')
                 .append($('<a>').attr('href', '/purchase/delete/' + visP[i].purchaseID).append($('<i>').attr('class', 'material-icons text-xx-9').html('delete')));
@@ -481,7 +490,7 @@ var ShowPurchases = function() {
 
 var ShowSearchCategories = function() {
 
-    let func = $.Deferred(function() {
+    var func = $.Deferred(function() {
 
         // shortcut the visible categories
         // clear categories container
@@ -489,8 +498,8 @@ var ShowSearchCategories = function() {
         // all of the above categories
         // as options to the category select element
 
-        let visC = V_CATEGORIES;
-        let catC = $('#category');
+        var visC = V_CATEGORIES;
+        var catC = $('#category');
 
         if ($('#category > option[value="0"]').length == 0) {
          
@@ -518,7 +527,7 @@ var ShowSearchCategories = function() {
 
 var ToggleColumns = function() {
 
-    let func = $.Deferred(function() {
+    var func = $.Deferred(function() {
 
         // loop through the selectors
         // see which one is checked
@@ -526,7 +535,7 @@ var ToggleColumns = function() {
         // these which are not
         // make invisible with d-none
 
-        let allS = SELECTORS;
+        var allS = SELECTORS;
 
         for (var i = 0; i < allS.length; i++) {
 
@@ -551,22 +560,22 @@ var ToggleColumns = function() {
 
 var FixPurchasesDate = function() {
 
-    let func = $.Deferred(function() {
+    var func = $.Deferred(function() {
 
         // loop through all the purchases
         // and change their date from
         // yyyy-mm-ddThh-mm-ss to
         // dd/mm/yyyy
 
-        let allP = G_PURCHASES;
+        var allP = G_PURCHASES;
 
         for (var i = 0; i < allP.length; i++) {
 
-            let fulD = allP[i].date.split('T')[0]; // get yyyy-mm-dd
-            let date = fulD.split('-')[2];
-            let mont = fulD.split('-')[1];
-            let year = fulD.split('-')[0];
-            let newD = date + '/' + mont + '/' + year;
+            var fulD = allP[i].date.split('T')[0]; // get yyyy-mm-dd
+            var date = fulD.split('-')[2];
+            var mont = fulD.split('-')[1];
+            var year = fulD.split('-')[0];
+            var newD = date + '/' + mont + '/' + year;
 
             allP[i].date = newD;
 
@@ -580,16 +589,16 @@ var FixPurchasesDate = function() {
 
 }
 
-var FilterGroup = function(g, s = false) {
+var FilterGroup = function(g, s) {
 
-    let func = $.Deferred(function() {
+    var func = $.Deferred(function() {
+
+        if (s == null) s = false;
 
         // if @g is 0 then show 'all'
         // make all purchases visible
         // and if @s is true then
         // call @ShowPurchases
-
-        console.log('group filter', 'g = ', g);
 
         if (g == 0) {
 
@@ -609,9 +618,9 @@ var FilterGroup = function(g, s = false) {
         // and if @s is true then
         // call @ShowPurchasesw
 
-        let allP = G_PURCHASES;
+        var allP = G_PURCHASES;
         V_PURCHASES = [];
-        let visP = V_PURCHASES;
+        var visP = V_PURCHASES;
 
         console.log('visP', visP);
         console.log('V_PURCHASES', V_PURCHASES);
@@ -631,10 +640,12 @@ var FilterGroup = function(g, s = false) {
     return func;
 }
 
-var FilterCategory = function(c, s = false) {
+var FilterCategory = function(c, s) {
 
-    let func = $.Deferred(function() {
+    var func = $.Deferred(function() {
         
+        if (s == null) s = false;
+
         // if @c is 0 then do nothing
         // and if @s is true then
         // call @ShowPurchases
@@ -655,7 +666,7 @@ var FilterCategory = function(c, s = false) {
         // and if @s is true then
         // call @ShowPurchasesw
 
-        let visP = V_PURCHASES;
+        var visP = V_PURCHASES;
 
         for (var i = visP.length - 1; i >= 0; i--) {
 
@@ -673,10 +684,12 @@ var FilterCategory = function(c, s = false) {
 
 }
 
-var FilterDate = function(d, s = false) {
+var FilterDate = function(d, s) {
     
-    let func = $.Deferred(function() {
+    var func = $.Deferred(function() {
         
+        if (s == null) s = false;
+
         // if @d is 0 then do nothing
         // and if @s is true then
         // call @ShowPurchases
@@ -700,8 +713,8 @@ var FilterDate = function(d, s = false) {
         // 3 = this month => if purchase.date - dateOneMonthAgo >= 0
         // 4 = this year => if purchase.date - dateOneYearAgo >= 0
 
-        let conD = new Date();
-        let visP = V_PURCHASES;
+        var conD = new Date();
+        var visP = V_PURCHASES;
 
         switch (d) {
 
@@ -725,11 +738,11 @@ var FilterDate = function(d, s = false) {
             // create new Date object from
             // visible purchase's date data
 
-            let purDate = visP[i].date.split('/')[0];
-            let purMont = visP[i].date.split('/')[1];
-            let purYear = visP[i].date.split('/')[2];
+            var purDate = visP[i].date.split('/')[0];
+            var purMont = visP[i].date.split('/')[1];
+            var purYear = visP[i].date.split('/')[2];
 
-            let purD = new Date();
+            var purD = new Date();
             purD.setDate(purDate);
             purD.setMonth(parseInt(purMont) - 1); // because Date.Month is 0 based
             purD.setFullYear(purYear);
@@ -750,7 +763,7 @@ var FilterDate = function(d, s = false) {
 
 var MakeAllVisible = function() {
 
-    let func = $.Deferred(function() {
+    var func = $.Deferred(function() {
 
         V_PURCHASES = G_PURCHASES.slice();
 
@@ -765,7 +778,7 @@ var MakeAllVisible = function() {
 
 var SortPurchases = function(o) {
 
-    let func = $.Deferred(function() {
+    var func = $.Deferred(function() {
 
         // get orderby options from html
         // get sortby option
@@ -775,9 +788,9 @@ var SortPurchases = function(o) {
         // then sort according to the
         // sort option value
 
-        let order = $('#orderby').val();
-        let sort = $('#sortby').val();
-        let visP = V_PURCHASES;
+        var order = $('#orderby').val();
+        var sort = $('#sortby').val();
+        var visP = V_PURCHASES;
 
         switch (order) {
             case '0': order = 'date'; break;
@@ -789,12 +802,12 @@ var SortPurchases = function(o) {
             
             visP.sort(function(a, b) {
                 
-                let aD = new Date();
+                var aD = new Date();
                 aD.setDate(a.date.split('/')[0]);
                 aD.setMonth(parseInt(a.date.split('/')[1]) - 1);
                 aD.setFullYear(a.date.split('/')[2]);
 
-                let bD = new Date();
+                var bD = new Date();
                 bD.setDate(b.date.split('/')[0]);
                 bD.setMonth(parseInt(b.date.split('/')[1]) - 1);
                 bD.setFullYear(b.date.split('/')[2]);

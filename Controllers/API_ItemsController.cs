@@ -40,9 +40,7 @@ namespace ShopTracker.Controllers
         {
             // Retrieve item with @id
             //
-            var item = DbContext.Items.Find(id);
-            DbContext.Categories.Load();
-            DbContext.Measures.Load();
+            var item = DbContext.Items.Where(i => i.ItemID == id).Include("Measure").Include("Category").FirstOrDefault();
 
             return new ObjectResult(item);
         }

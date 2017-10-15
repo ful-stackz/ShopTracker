@@ -33,12 +33,12 @@ namespace ShopTracker.Controllers
             // Retrieve all purchases from the databases
             // and load dependent data
             //
-            var purchases = DbContext.Purchases.Where(p => p.GroupID == id).ToList();
-            DbContext.Users.Load();
-            DbContext.Items.Load();
-            DbContext.Categories.Load();
-            DbContext.Measures.Load();
-            DbContext.Currencies.Load();
+            var purchases = DbContext.Purchases.Where(p => p.GroupID == id)
+                .Include("Item")
+                .Include("Item.Measure")
+                .Include("Item.Category")
+                .Include("Currency")
+                .ToList();
 
             // Return as JSON
             //
@@ -53,12 +53,13 @@ namespace ShopTracker.Controllers
             // Retrieve all purchases from the databases
             // and load dependent data
             //
-            var purchases = DbContext.Purchases.Where(p => p.UserID == id).ToList();
-            DbContext.Users.Load();
-            DbContext.Items.Load();
-            DbContext.Categories.Load();
-            DbContext.Measures.Load();
-            DbContext.Currencies.Load();
+
+            var purchases = DbContext.Purchases.Where(p => p.UserID == id)
+                .Include("Item")
+                .Include("Item.Measure")
+                .Include("Item.Category")
+                .Include("Currency")
+                .ToList();
 
             // Return as JSON
             //

@@ -34,7 +34,7 @@ $('#item').on('change', function() {
 // FUNCTIONS
 var LoadUserGroups = function() {
 
-    let request = $.ajax("/api/groups/" + $("#userId").val());
+    var request = $.ajax("/api/groups/" + $("#userId").val());
     
         request.done(function(groups) {
     
@@ -43,7 +43,7 @@ var LoadUserGroups = function() {
             // add 'all' option
             // and fill it with the groups retrieved
             
-            let gc = $('#group');
+            var gc = $('#group');
     
             gc.html('');
     
@@ -71,7 +71,7 @@ var LoadUserGroups = function() {
 
 var LoadCurrencies = function() {
 
-    let request = $.ajax('/api/currencies');
+    var request = $.ajax('/api/currencies');
 
     request.done(function(allC) {
 
@@ -80,7 +80,7 @@ var LoadCurrencies = function() {
         // empty the container just in case
         // append all the currencies loaded
 
-        let cc = $('#currency');
+        var cc = $('#currency');
 
         cc.html('');
 
@@ -104,7 +104,7 @@ var LoadCurrencies = function() {
 
 var ShowCurrentDate = function() {
 
-    let func = $.Deferred(function() {
+    var func = $.Deferred(function() {
 
         // get today as a Date object
         // get date, month and year for today
@@ -112,12 +112,12 @@ var ShowCurrentDate = function() {
         // append that string to the 
         // date input field
 
-        let today = new Date();
-        let day = today.getDate();
-        let month = today.getMonth() + 1;
-        let year = today.getFullYear();
+        var today = new Date();
+        var day = today.getDate();
+        var month = today.getMonth() + 1;
+        var year = today.getFullYear();
 
-        let fDate = day + '/' + month + '/' + year;
+        var fDate = day + '/' + month + '/' + year;
         
         $('#date').val(fDate);
 
@@ -131,7 +131,7 @@ var ShowCurrentDate = function() {
 
 var LoadAllItems = function() {
 
-    let request = $.ajax('/api/items');
+    var request = $.ajax('/api/items');
 
     request.done(function(items) {
 
@@ -143,7 +143,7 @@ var LoadAllItems = function() {
         // append all the items
         // as options with item id as value
 
-        let itemC = $('#item');
+        var itemC = $('#item');
 
         itemC.html('');
 
@@ -151,7 +151,7 @@ var LoadAllItems = function() {
 
             G_ITEMS[items[i].itemID] = items[i];
 
-            let item = $('<span>');
+            var item = $('<span>');
             item.append(items[i].name);
             item.append(' ');
             item.append($('<span>').attr('class', 'badge badge-secondary').html(items[i].category.name));
@@ -175,16 +175,16 @@ var LoadAllItems = function() {
 
 var PickItem = function() {
 
-    let func = $.Deferred(function() {
+    var func = $.Deferred(function() {
         
         // get item info from item input field
         // load the corrsponding fields with 
         // data for the picked item
 
-        let itemP = $('#item').val(); // itemPicked
-        let itemIdC = $('#itemId');
-        let measC = $('#measure');
-        let catC = $('#category');
+        var itemP = $('#item').val(); // itemPicked
+        var itemIdC = $('#itemId');
+        var measC = $('#measure');
+        var catC = $('#category');
 
         console.log('New item picked! id: ' + itemP + '; item name: ' + G_ITEMS[itemP].name);
 
